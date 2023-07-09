@@ -18,12 +18,12 @@ The aim of this project is to establish a career services platform that enables 
 
 | Name           |   Github Username     |   Roles       |
 | ---------------|   --------------------|   ------------|
-| Sadath Roshan  | roshansadath | Scrum Master |
-| Sindoora Rao  |   Sindoora-Rao | Front-end Developer|
-| Lakshya Kalia | lakshyakalia  |   Front-end Developer |
-| Pankaj Deep Sahota | pankajdeep   | Back-end Developer |
-| Manish Gautam | manish198 |   Back-end Developer |
-| Manasa Yalakala | ManasaY13 | Quality Assurance   |
+| Sadath Roshan  | [roshansadath](https://github.com/roshansadath) | Scrum Master |
+| Sindoora Rao  |   [Sindoora-Rao](https://github.com/Sindoora-Rao) | Front-end Developer|
+| Lakshya Kalia | [lakshyakalia](https://github.com/lakshyakalia)  |   Front-end Developer |
+| Pankaj Deep Sahota | [pankajdeep](https://github.com/pankajdeep)  | Back-end Developer |
+| Manish Gautam | [manish198](https://github.com/manish198) |   Back-end Developer |
+| Manasa Yalakala | [ManasaY13](https://github.com/ManasaY13) | Quality Assurance   |
 
 &nbsp;
 
