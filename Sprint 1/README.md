@@ -4,7 +4,7 @@
 ![job search image](https://d2zp5xs5cp8zlg.cloudfront.net/image-38279-800.jpg)
 
 &nbsp;
-#### **Project Description:**
+### **Project Description:**
 The aim of this project is to establish a career services platform that enables students (individuals seeking employment) to create and update their portfolios while allowing employers to post job opportunities.\
 \
  This platform simplifies the process of job hunting, benefiting both job seekers and employers by helping them identify potential matches. It also facilitates targeted candidate searches for employers and allows job seekers to tailor their profiles to align with market requirements. Accessing the platform only requires a computer or mobile device with internet access. To utilize this online career services system, students and employers must create an account using their email and password for login purposes. Students can create or modify their profiles, browse and apply for job postings, while employers can create and manage job posts and review candidate applications.\
@@ -14,7 +14,7 @@ The aim of this project is to establish a career services platform that enables 
 &nbsp;
 
 
-#### **Group Members and Roles:**
+### **Group Members and Roles:**
 
 | Name           |   Github Username     |   Roles       |
 | ---------------|   --------------------|   ------------|
@@ -27,7 +27,7 @@ The aim of this project is to establish a career services platform that enables 
 
 &nbsp;
 
-#### **Tech Stack:**
+### **Tech Stack:**
 - Front-end : HTML, CSS and JS
 
 - Back-end : NodeJS
@@ -36,7 +36,7 @@ The aim of this project is to establish a career services platform that enables 
 
 &nbsp;
 
-#### **Project Approach**:
+### **Project Approach**:
 Major tasks we need to carry out-
 
 - [x] Create wireframes
