@@ -1,36 +1,52 @@
-# Career Services Application
+# **Career Services Application**
+&nbsp;
 
-# Project Description:
-The objective of this project is to provide a career services platform where the students (people
-looking for jobs) will be able to post and update their portfolio and the employers should be able
-to post jobs. With the help of this, you can carry out a job head hunting in your own comfort. This
-benefits job-seeking candidates and employers to shortlist their potential job and employee
-respectively. This can also help employers find specific candidates as per their requirements along
-with job seekers being able to tailor their profile as per the market. All you require is a PC or a
-mobile device with Internet to access the website online. To get to this online career services
-system all the Students and Employers will create an account and use their email and password
-to login. Students will create/modify their profile and will view and apply to job postings.
-Employers will create and manage their job posts, review applications from candidates. The login
-credentials for this system are under high security and nobody will have the capacity to crack it
-easily. Employers will receive notifications when students apply to their job offers, and students
-when they are called for interview.
-The following are the categories of main users:
-1. Employer – create an account/register, login, browse candidates, add job offers, select
-candidates that have already applied to an offer for an interview, track the post
-2. Student/Candidate – create an account/register, login, and build/upload a resume; browse and
-apply for job offers; track applications
-3. Admin – Managing all user profiles, postings and tracking
+![job search image](https://d2zp5xs5cp8zlg.cloudfront.net/image-38279-800.jpg)
 
-# Group Members and Roles:
-Sadath Roshan
-Pankaj Deep Sahota
-Manasa Yalakala
-Sindoora Rao
-Manish Gautam
-Lakshya Kalia
+&nbsp;
+#### **Project Description:**
+The aim of this project is to establish a career services platform that enables students (individuals seeking employment) to create and update their portfolios while allowing employers to post job opportunities.\
+\
+ This platform simplifies the process of job hunting, benefiting both job seekers and employers by helping them identify potential matches. It also facilitates targeted candidate searches for employers and allows job seekers to tailor their profiles to align with market requirements. Accessing the platform only requires a computer or mobile device with internet access. To utilize this online career services system, students and employers must create an account using their email and password for login purposes. Students can create or modify their profiles, browse and apply for job postings, while employers can create and manage job posts and review candidate applications.\
+\
+ The login credentials for this system are highly secure, ensuring the protection of user accounts. Employers receive notifications when students apply for their job offers, and students are notified when they are called for interviews. The main user categories include employers, who can register, log in, browse candidates, add job offers, select candidates for interviews, and track their postings; students/candidates, who can register, log in, create/upload resumes, browse and apply for job offers, and track their applications; and admins, responsible for managing user profiles, postings, and tracking activities.
 
-# Tech Stack:
+&nbsp;
 
-# Project Approach:
 
+#### **Group Members and Roles:**
+
+| Name           |   Github Username     |   Roles       |
+| ---------------|   --------------------|   ------------|
+| Sadath Roshan  | roshansadath | Scrum Master |
+| Sindoora Rao  |   Sindoora-Rao | Front-end Developer|
+| Lakshya Kalia | lakshyakalia  |   Front-end Developer |
+| Pankaj Deep Sahota | pankajdeep   | Back-end Developer |
+| Manish Gautam | manish198 |   Back-end Developer |
+| Manasa Yalakala | ManasaY13 | Quality Assurance   |
+
+&nbsp;
+
+#### **Tech Stack:**
+- Front-end : HTML, CSS and JS
+
+- Back-end : NodeJS
+
+- Database : SQL Server
+
+&nbsp;
+
+#### **Project Approach**:
+Major tasks we need to carry out-
+
+- [x] Create wireframes
+- [ ] Decide database schema
+- [ ] Create list of functionalities
+- [ ] Decide (CRUD)APIs
+- [ ] Create webpages
+- [ ] Create APIs
+- [ ] Test APIs using POSTMAN
+- [ ] Integrate UI with backend APIs
+- [ ] Testing(Unit, Integration, UAT, etc.)
+- [ ] Deployment
 
