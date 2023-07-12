@@ -23,7 +23,7 @@ The aim of this project is to establish a career services platform that enables 
 | Lakshya Kalia | [lakshyakalia](https://github.com/lakshyakalia)  |   Front-end Developer |
 | Pankaj Deep Sahota | [pankajdeep](https://github.com/pankajdeep)  | Back-end Developer |
 | Manish Gautam | [manish198](https://github.com/manish198) |   Back-end Developer |
-| Manasa Yalakala | [ManasaY13](https://github.com/ManasaY13) | Quality Assurance   |
+| Manasa Yalakala | [YManasa13](https://github.com/YManasa13) | Quality Assurance   |
 
 &nbsp;
 
@@ -40,9 +40,9 @@ The aim of this project is to establish a career services platform that enables 
 Major tasks we need to carry out-
 
 - [x] Create wireframes
-- [ ] Decide database schema
+- [ ] Design database schema
 - [ ] Create list of functionalities
-- [ ] Decide (CRUD)APIs
+- [ ] Decide (CRUD) APIs
 - [ ] Create webpages
 - [ ] Create APIs
 - [ ] Test APIs using POSTMAN
