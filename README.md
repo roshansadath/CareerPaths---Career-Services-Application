@@ -28,9 +28,9 @@ The aim of this project is to establish a career services platform that enables 
 &nbsp;
 
 ### **Tech Stack:**
-- Front-end : HTML, CSS and JS
+- Front-end : HTML, CSS and JS (Subject to alterations)
 
-- Back-end : NodeJS
+- Back-end : NodeJS (Subject to alterations)
 
 - Database : SQL Server
 
