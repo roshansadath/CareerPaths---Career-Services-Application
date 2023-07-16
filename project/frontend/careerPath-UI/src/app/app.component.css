@@ -16,3 +16,7 @@ body{
     background-image: url(../assets/Background.jpg); /* Background image */
     background-size: cover; /* Adjust background image size */
 }
+
+*{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
