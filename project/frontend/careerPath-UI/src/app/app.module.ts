@@ -9,6 +9,11 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
+import { EmployerDashboardComponent } from './employer-dashboard/employer-dashboard.component';
+import { CardComponent } from './card/card.component';
+import { NewJobPostingComponent } from './new-job-posting/new-job-posting.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +21,12 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     LoginComponent,
     HeaderComponent,
     FooterComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    DashboardComponent,
+    StudentDashboardComponent,
+    EmployerDashboardComponent,
+    CardComponent,
+    NewJobPostingComponent
   ],
   imports: [
     BrowserModule,
