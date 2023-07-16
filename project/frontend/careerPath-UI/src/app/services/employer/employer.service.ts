@@ -13,4 +13,8 @@ export class EmployerService {
   getJobPostingData(): Observable<any>{
     return this.http.get(`${APIUrl}/employer/postings`);
   }
+
+  postNewJobData(data: any): Observable<any>{
+    return this.http.post(`${APIUrl}/employer/post/job`, data);
+  }
 }

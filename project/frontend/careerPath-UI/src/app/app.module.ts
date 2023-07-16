@@ -14,6 +14,7 @@ import { StudentDashboardComponent } from './student-dashboard/student-dashboard
 import { EmployerDashboardComponent } from './employer-dashboard/employer-dashboard.component';
 import { CardComponent } from './card/card.component';
 import { NewJobPostingComponent } from './new-job-posting/new-job-posting.component';
+// import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NewJobPostingComponent } from './new-job-posting/new-job-posting.compon
     StudentDashboardComponent,
     EmployerDashboardComponent,
     CardComponent,
-    NewJobPostingComponent
+    NewJobPostingComponent,
+    // SignupComponent
   ],
   imports: [
     BrowserModule,

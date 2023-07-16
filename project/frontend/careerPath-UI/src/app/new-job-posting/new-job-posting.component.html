@@ -1,1 +1,36 @@
-<p>new-job-posting works!</p>
+<div class="container">
+    
+    <div class="posting-container">
+        <div>
+            <h2 style="margin-bottom: 20px;"><b>New Job Posting:</b></h2>
+        </div>
+       <div>
+            <img style="width: -webkit-fill-available; border-radius: 50px;" src="../../assets/GettyImages-1209452765.png">
+       </div>
+       <div class="form-container">
+            <form [formGroup]="jobPostingForm" (ngSubmit)="submitNewFormData()">
+                <div>
+                    <div><label>Job Title: </label></div>
+                    <div><input formControlName="jobTitle" class="form-control" type="text"></div>
+                </div>
+                <div>
+                    <div><label>Job Description: </label></div>
+                    <div><textarea formControlName="jobDesc" class="form-control" rows="5" cols="40" placeholder="Enter the job description..."></textarea>
+                    </div>
+                </div>
+                <div>
+                    <div><label>Name of team: </label></div>
+                    <div><input formControlName="nameOfTeam" class="form-control" type="text"></div>
+                </div>
+                <div>
+                    <div><label>Pay range: </label></div>
+                    <div><input formControlName="payRange" class="form-control" type="text"></div>
+                </div>
+    
+                <div>
+                    <button class="btn btn-primary" type="submit">Create Job Posting</button>
+                </div>
+            </form>
+       </div>
+    </div>
+</div>
