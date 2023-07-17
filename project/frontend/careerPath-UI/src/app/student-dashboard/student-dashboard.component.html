@@ -1,1 +1,5 @@
-<p>student-dashboard works!</p>
+<div class="container">
+    <div *ngFor="let job of jobPosting" (click)="openJobDetail(job)">
+        <app-card [cardTitle]="job.title" [cardDesc]="job.desc" [cardLocation]="job.location" [cardDate]="job.date"></app-card>
+    </div>
+</div>

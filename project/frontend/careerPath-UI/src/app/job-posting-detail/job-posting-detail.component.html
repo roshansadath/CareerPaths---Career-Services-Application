@@ -27,13 +27,16 @@
                 </div>
     
                 
-            <div>
+            <div *ngIf="role != 'student'">
                 <div>
                     <label>Candidate List:</label>
                 </div>
                 <div *ngFor="let candidate of candidateList">
                     <app-card [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty"></app-card>
                 </div>
+            </div>
+            <div *ngIf="role == 'student'">
+                <button class="btn btn-success">Apply for Job</button>
             </div>
        </div>
     </div>

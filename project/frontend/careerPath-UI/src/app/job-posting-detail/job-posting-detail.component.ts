@@ -19,6 +19,8 @@ export class JobPostingDetailComponent {
   nameOfTeam: string = 'QA Team';
   payRange: string = '21000';
 
+  role: string = 'student';
+
   empty: string = '';
 
   candidateList = [
