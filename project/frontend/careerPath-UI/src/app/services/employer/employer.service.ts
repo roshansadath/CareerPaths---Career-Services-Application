@@ -10,11 +10,15 @@ export class EmployerService {
 
   constructor(private http: HttpClient) { }
 
-  getJobPostingData(): Observable<any>{
+  getJobPostingListData(): Observable<any>{
     return this.http.get(`${APIUrl}/employer/postings`);
   }
 
   postNewJobData(data: any): Observable<any>{
     return this.http.post(`${APIUrl}/employer/post/job`, data);
+  }
+
+  getJobDetail(data: any): Observable<any>{
+    return this.http.get(`${APIUrl}/employer/postings/detail`, data);
   }
 }

@@ -12,4 +12,17 @@ export class CardComponent {
   @Input() cardLocation = '';
   @Input() cardDate = '';
 
+  student: boolean = false;
+
+  ngOnInit(){
+    if(this.cardDesc == '' &&
+      this.cardLocation == '' &&
+      this.cardDate == ''){
+        this.student = true;
+      }
+      else{
+        this.student = false;
+      }
+  }
+
 }

@@ -1,20 +1,24 @@
 <div class="card-container">
     <div class="flex-container">
         <div>
-            <label>Job Designation:</label>
+            <label>{{ !student? 'Job Designation:':'Candidate Name:' }}</label>
             {{cardTitle}}
         </div>
-        <div>
+        <div *ngIf="!student">
             <label>Description:</label>
             {{cardDesc}}
         </div>
-        <div>
+        <div *ngIf="!student">
             <label>Location:</label>
             {{cardLocation}}
         </div>
-        <div>
+        <div *ngIf="!student">
             <label>Posted On:</label>
             {{cardDate}}
+        </div>
+        <div *ngIf="student" style="text-align: end;">
+            <button class="btn btn-success">Invite for interview</button>
+            <button class="btn btn-danger">Reject</button>
         </div>
     </div>
 </div>

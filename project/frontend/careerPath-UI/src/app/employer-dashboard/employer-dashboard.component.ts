@@ -26,7 +26,7 @@ export class EmployerDashboardComponent {
   ];
 
   getJobPostings(){
-    this.employerService.getJobPostingData().subscribe({
+    this.employerService.getJobPostingListData().subscribe({
       next: response=> {
         this.jobPosting = response;
       }, error: err => {

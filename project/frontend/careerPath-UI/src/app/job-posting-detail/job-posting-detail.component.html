@@ -1,0 +1,40 @@
+<div class="container">
+    
+    <div class="posting-container">
+        <div>
+            <h2 style="margin-bottom: 20px;"><b>Job Posting Detail:</b></h2>
+        </div>
+       <div>
+            <img style="width: -webkit-fill-available; border-radius: 50px;" src="../../assets/img-20180108-5a53475c96097-720x405.jpg">
+       </div>
+       <div class="form-container">
+                <div>
+                    <div><label>Job Title: </label></div>
+                    <div>{{ jobTitle }}</div>
+                </div>
+                <div>
+                    <div><label>Job Description: </label></div>
+                    <div>{{ jobDesc }}
+                    </div>
+                </div>
+                <div>
+                    <div><label>Name of team: </label></div>
+                    <div>{{ nameOfTeam }}</div>
+                </div>
+                <div>
+                    <div><label>Pay range: </label></div>
+                    <div>${{ payRange }}</div>
+                </div>
+    
+                
+            <div>
+                <div>
+                    <label>Candidate List:</label>
+                </div>
+                <div *ngFor="let candidate of candidateList">
+                    <app-card [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty"></app-card>
+                </div>
+            </div>
+       </div>
+    </div>
+</div>
