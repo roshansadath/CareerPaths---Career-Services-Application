@@ -7,7 +7,7 @@ import { JobPostingDetailComponent } from './job-posting-detail/job-posting-deta
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: JobPostingDetailComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'posting/new', component: NewJobPostingComponent}
 ];
 
