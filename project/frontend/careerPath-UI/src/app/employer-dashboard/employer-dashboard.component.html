@@ -1,6 +1,6 @@
 <div class="container">
     <div>
-        <a routerLink="/posting/new" class="btn btn-primary posting-btn">New Job Posting</a>
+        <a routerLink="/dashboard/posting/new" class="btn btn-primary posting-btn">New Job Posting</a>
     </div>
     <div *ngFor="let job of jobPosting" (click)="openJobDetail(job)">
         <app-card [cardTitle]="job.title" [cardDesc]="job.desc" [cardLocation]="job.location" [cardDate]="job.date"></app-card>

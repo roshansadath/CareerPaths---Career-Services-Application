@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { EmployerService } from '../services/employer/employer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employer-dashboard',
@@ -11,7 +12,8 @@ export class EmployerDashboardComponent {
 
   }
 
-  constructor(private employerService: EmployerService){
+  constructor(private employerService: EmployerService,
+    private router: Router){
 
   }
   jobPosting = [
@@ -38,5 +40,6 @@ export class EmployerDashboardComponent {
   openJobDetail(job: any){
     console.log(job);
     this.employerService.getJobDetail(job);
+    this.router.navigate(['/dashboard/posting']);
   }
 }
