@@ -20,8 +20,9 @@
                     <div class="detail-item">Password: *********</div>
                     <div class="cv" *ngIf="(!tempInternalData) || role == 'student'">
                         <!-- <a href="#">Upload CV</a> -->
-                        <span>Upload CV:</span>
-                        <input type="file" class="file-upload" onchange="uploadFileUpdated(event.target.files)">
+                        <!-- <span>Upload CV:</span>
+                        <input type="file" class="file-upload" onchange="uploadFileUpdated(event.target.files)"> -->
+                        <app-upload></app-upload>
                     </div>
                 </div>
             </div>

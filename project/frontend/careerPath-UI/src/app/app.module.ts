@@ -17,6 +17,7 @@ import { NewJobPostingComponent } from './new-job-posting/new-job-posting.compon
 import { JobPostingDetailComponent } from './job-posting-detail/job-posting-detail.component';
 import { SignupComponent } from './signup/signup.component';
 import { SearchPipe } from './pipe/search.pipe';
+import { UploadComponent } from './upload/upload.component';
 // import { SearchPipe } from './search.pipe';
 // import { SignupComponent } from './signup/signup.component';
 
@@ -34,7 +35,8 @@ import { SearchPipe } from './pipe/search.pipe';
     NewJobPostingComponent,
     JobPostingDetailComponent,
     SignupComponent,
-    SearchPipe
+    SearchPipe,
+    UploadComponent
     // SearchPipe,
     // SignupComponent
   ],

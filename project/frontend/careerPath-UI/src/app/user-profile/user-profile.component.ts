@@ -11,7 +11,7 @@ export class UserProfileComponent {
 name: string = 'John Doe';
 username: string = 'Joe123';
 email: string = 'joe@gmail.com';
-role: string = 'Student';
+role: string = 'student';
 
 tempInternalData: boolean = false;
 

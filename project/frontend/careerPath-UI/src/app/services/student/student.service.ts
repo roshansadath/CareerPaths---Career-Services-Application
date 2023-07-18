@@ -30,4 +30,8 @@ export class StudentService {
     this.candidateDetails = candidate;
     this.setInternalDataValue(true);
   }
+
+  uploadFile(formData: any): Observable<any>{
+    return this.http.post(`${APIUrl}/file/upload`, formData);
+  }
 }
