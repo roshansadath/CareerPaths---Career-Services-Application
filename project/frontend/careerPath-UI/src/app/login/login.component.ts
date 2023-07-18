@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../services/login/login.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,8 @@ export class LoginComponent {
   loginForm: FormGroup;
   
   constructor(private loginService: LoginService,
-    private formBuilder: FormBuilder){
+    private formBuilder: FormBuilder,
+    private router: Router){
       this.loginForm = this.formBuilder.group({
         username: '',
         password: '',
@@ -32,6 +34,7 @@ export class LoginComponent {
 
       }, error: err => {
       console.log(err);
+      this.router.navigate(['/profile']);
     }
     });  
   }

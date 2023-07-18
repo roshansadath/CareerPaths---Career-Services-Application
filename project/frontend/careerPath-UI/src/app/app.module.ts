@@ -15,6 +15,7 @@ import { EmployerDashboardComponent } from './employer-dashboard/employer-dashbo
 import { CardComponent } from './card/card.component';
 import { NewJobPostingComponent } from './new-job-posting/new-job-posting.component';
 import { JobPostingDetailComponent } from './job-posting-detail/job-posting-detail.component';
+import { SignupComponent } from './signup/signup.component';
 // import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
@@ -30,6 +31,7 @@ import { JobPostingDetailComponent } from './job-posting-detail/job-posting-deta
     CardComponent,
     NewJobPostingComponent,
     JobPostingDetailComponent,
+    SignupComponent,
     // SignupComponent
   ],
   imports: [

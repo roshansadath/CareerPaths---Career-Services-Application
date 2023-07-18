@@ -5,10 +5,12 @@ import { NewJobPostingComponent } from './new-job-posting/new-job-posting.compon
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { JobPostingDetailComponent } from './job-posting-detail/job-posting-detail.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
   { path: 'profile', component: UserProfileComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/posting', component: JobPostingDetailComponent },
