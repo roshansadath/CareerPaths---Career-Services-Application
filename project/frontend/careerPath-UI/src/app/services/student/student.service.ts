@@ -10,7 +10,24 @@ export class StudentService {
 
   constructor(private http: HttpClient) { }
 
+  candidateDetails = {};
+  private internalDataCall: boolean = false;
+
+
   getAllJobPostingListData(): Observable<any>{
     return this.http.get(`${APIUrl}/student/postings`);
+  }
+
+  setInternalDataValue(val: boolean){
+    this.internalDataCall = val;
+  }
+
+  getInternalDataValue(){
+    return this.internalDataCall;
+  }
+
+  setStudentDetails(candidate: any){
+    this.candidateDetails = candidate;
+    this.setInternalDataValue(true);
   }
 }

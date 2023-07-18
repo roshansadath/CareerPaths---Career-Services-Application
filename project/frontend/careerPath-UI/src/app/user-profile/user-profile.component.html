@@ -14,8 +14,10 @@
                     <div class="detail-item">Username: {{ username }}</div>
                     <div class="detail-item">Email: {{ email }}</div>
                     <div class="detail-item">Password: *********</div>
-                    <div class="cv">
-                        <a href="#">Upload CV</a>
+                    <div class="cv" *ngIf="!tempInternalData">
+                        <!-- <a href="#">Upload CV</a> -->
+                        <span>Upload CV:</span>
+                        <input type="file" class="file-upload" onchange="uploadFileUpdated(event.target.files)">
                     </div>
                 </div>
             </div>

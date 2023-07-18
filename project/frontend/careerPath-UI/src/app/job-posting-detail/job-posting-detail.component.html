@@ -31,7 +31,7 @@
                 <div>
                     <label>Candidate List:</label>
                 </div>
-                <div *ngFor="let candidate of candidateList">
+                <div *ngFor="let candidate of candidateList" (click)="candidateDetails(candidate)">
                     <app-card [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty"></app-card>
                 </div>
             </div>
