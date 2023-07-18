@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { EmployerService } from '../services/employer/employer.service';
 import { StudentService } from '../services/student/student.service';
 import { Router } from '@angular/router';
+import { UserService } from '../services/user/user.service';
 
 @Component({
   selector: 'app-job-posting-detail',
@@ -11,11 +12,12 @@ import { Router } from '@angular/router';
 export class JobPostingDetailComponent {
 
   ngOnInit(){
-
+    this.role = this.userService.getRole();
   }
   constructor(private employerService: EmployerService,
     private studentService: StudentService,
-    private router: Router){
+    private router: Router,
+    private userService: UserService){
 
   }
   jobTitle: string = 'QA';
@@ -23,7 +25,7 @@ export class JobPostingDetailComponent {
   nameOfTeam: string = 'QA Team';
   payRange: string = '21000';
 
-  role: string = 'employer';
+  role: string = '';
 
   empty: string = '';
 

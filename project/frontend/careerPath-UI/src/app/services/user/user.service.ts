@@ -10,6 +10,16 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  role: string = '';
+
+  setRole(role: string){
+    this.role = role;
+  }
+
+  getRole(){
+    return this.role;
+  }
+
   getUserData(): Observable<any>{
     return this.http.get(`${APIUrl}/user/details`);
   }

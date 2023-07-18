@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from '../services/user/user.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
+  role: string = '';
+  ngOnInit(){
+    this.role = this.userService.getRole();
+  }
+
+  constructor(private userService: UserService){
+
+  }
 }

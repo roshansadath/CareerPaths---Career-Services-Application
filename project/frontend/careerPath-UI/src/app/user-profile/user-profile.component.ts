@@ -38,6 +38,7 @@ constructor(private userService: UserService,
 ngOnDestroy(){
   this.studentService.setInternalDataValue(false);
   this.tempInternalData = false;
+  this.userService.setRole(this.role);
 }
 
 getUserDetails(){
@@ -48,6 +49,8 @@ getUserDetails(){
       this.email = response.email;
       this.username = response.username;
       this.role = response.role;
+
+      this.userService.setRole(this.role);
     }, error: err => {
     console.log(err);
   }
