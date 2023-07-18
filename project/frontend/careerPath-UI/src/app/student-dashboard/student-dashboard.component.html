@@ -8,6 +8,6 @@
         </div>
     </div>
     <div *ngFor="let job of jobPosting | search: searchTerm" (click)="openJobDetail(job)">
-        <app-card [cardTitle]="job.title" [cardDesc]="job.desc" [cardLocation]="job.location" [cardDate]="job.date"></app-card>
+        <app-card [cardTitle]="job.job_designation" [cardDesc]="job.job_description" [cardLocation]="job.location" [cardDate]="job.posted_date"></app-card>
     </div>
 </div>

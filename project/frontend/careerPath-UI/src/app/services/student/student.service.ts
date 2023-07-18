@@ -15,7 +15,7 @@ export class StudentService {
 
 
   getAllJobPostingListData(): Observable<any>{
-    return this.http.get(`${APIUrl}/student/postings`);
+    return this.http.get(`${APIUrl}/job_post/alljobpost`);
   }
 
   setInternalDataValue(val: boolean){

@@ -9,6 +9,9 @@ import { EmployerService } from '../services/employer/employer.service';
   styleUrls: ['./student-dashboard.component.css']
 })
 export class StudentDashboardComponent {
+  ngOnInit(){
+    this.getJobPostings();
+  }
   searchTerm: string = '';
   constructor(private studentService: StudentService,
     private router: Router,
