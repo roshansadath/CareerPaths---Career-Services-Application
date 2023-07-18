@@ -10,6 +10,8 @@ export class EmployerService {
 
   constructor(private http: HttpClient) { }
 
+  jobPostingData: any = {};
+
   getJobPostingListData(): Observable<any>{
     const token = localStorage.getItem('userToken');
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
@@ -26,7 +28,11 @@ export class EmployerService {
     return this.http.get(`${APIUrl}/employer/postings/detail`, data);
   }
 
-  getJobDetail(data: any){
-    
+  setJobDetail(data: any){
+    this.jobPostingData = data;
+  }
+
+  getJobDetail(){
+    return this.jobPostingData;
   }
 }

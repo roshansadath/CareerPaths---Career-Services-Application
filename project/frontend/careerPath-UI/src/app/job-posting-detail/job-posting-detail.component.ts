@@ -13,6 +13,7 @@ export class JobPostingDetailComponent {
 
   ngOnInit(){
     this.role = this.userService.getRole();
+    this.setJobPostingDetailData();
   }
   constructor(private employerService: EmployerService,
     private studentService: StudentService,
@@ -37,6 +38,14 @@ export class JobPostingDetailComponent {
     { name: 'C5', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
 
   ]
+
+  setJobPostingDetailData(){
+    let data = this.employerService.getJobDetail();
+    this.jobTitle = data.job_designation;
+    this.jobDesc = data.job_description;
+    this.nameOfTeam = data.name_of_the_team;
+    this.payRange = data.pay_range;
+  }
 
 
   candidateDetails(candidate: any){

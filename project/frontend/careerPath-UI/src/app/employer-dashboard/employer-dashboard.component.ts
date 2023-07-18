@@ -40,7 +40,7 @@ export class EmployerDashboardComponent {
 
   openJobDetail(job: any){
     console.log(job);
-    this.employerService.getJobDetail(job);
+    this.employerService.setJobDetail(job);
     this.router.navigate(['/dashboard/posting']);
   }
 }
