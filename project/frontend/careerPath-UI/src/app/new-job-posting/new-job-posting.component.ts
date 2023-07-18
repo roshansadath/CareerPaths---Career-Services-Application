@@ -38,9 +38,9 @@ export class NewJobPostingComponent {
     this.employeeService.postNewJobData(data)
     .subscribe({
       next: response=> {
-        if(response.statusCode == 200){
-          window.alert("Job Posting Successful!");
-        }
+        // if(response.statusCode == 200){
+        //   window.alert("Job Posting Successful!");
+        // }
       }, error: err => {
       console.log(err);
     }

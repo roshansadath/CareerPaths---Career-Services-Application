@@ -26,6 +26,8 @@ export class JobPostingDetailComponent {
   nameOfTeam: string = 'QA Team';
   payRange: string = '21000';
 
+  postId: number = -1;
+
   role: string = '';
 
   empty: string = '';
@@ -45,6 +47,7 @@ export class JobPostingDetailComponent {
     this.jobDesc = data.job_description;
     this.nameOfTeam = data.name_of_the_team;
     this.payRange = data.pay_range;
+    this.postId = data.postId;
   }
 
 
@@ -52,6 +55,20 @@ export class JobPostingDetailComponent {
     console.log(candidate)
     this.studentService.setStudentDetails(candidate);
     this.router.navigate(['/profile']);
+  }
+
+  applyForJob(){
+    let data = {
+      status: 'Pending',
+      postId: this.postId
+    }
+    this.studentService.applyForJob(data).subscribe({
+      next: response=> {
+        window.alert("Applied");
+      }, error: err => {
+      console.log(err);
+    }
+    });
   }
 
   

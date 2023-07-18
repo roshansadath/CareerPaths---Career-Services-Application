@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { APIUrl } from 'src/app/constants/constant';
@@ -34,4 +34,11 @@ export class StudentService {
   uploadFile(formData: any): Observable<any>{
     return this.http.post(`${APIUrl}/file/upload`, formData);
   }
+
+  applyForJob(data: any){
+    const token = localStorage.getItem('userToken');
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.post(`${APIUrl}/job_application`,data ,{ headers: headers });
+  }
+
 }
