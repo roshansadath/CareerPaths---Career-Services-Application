@@ -16,6 +16,8 @@ import { CardComponent } from './card/card.component';
 import { NewJobPostingComponent } from './new-job-posting/new-job-posting.component';
 import { JobPostingDetailComponent } from './job-posting-detail/job-posting-detail.component';
 import { SignupComponent } from './signup/signup.component';
+import { SearchPipe } from './pipe/search.pipe';
+// import { SearchPipe } from './search.pipe';
 // import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
@@ -32,6 +34,8 @@ import { SignupComponent } from './signup/signup.component';
     NewJobPostingComponent,
     JobPostingDetailComponent,
     SignupComponent,
+    SearchPipe
+    // SearchPipe,
     // SignupComponent
   ],
   imports: [

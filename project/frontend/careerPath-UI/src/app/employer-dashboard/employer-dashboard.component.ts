@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./employer-dashboard.component.css']
 })
 export class EmployerDashboardComponent {
+  searchTerm: string = '';
   ngOnInit(){
 
   }

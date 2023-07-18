@@ -1,8 +1,13 @@
 <div class="container">
-    <div>
-        <a routerLink="/dashboard/posting/new" class="btn btn-primary posting-btn">New Job Posting</a>
+    <div style="display: flex; justify-content: space-between;">
+        <div>
+            <input type="text"  [(ngModel)]="searchTerm" class="form-control" placeholder="Search Designation">
+        </div>
+        <div>
+            <a routerLink="/dashboard/posting/new" class="btn btn-primary posting-btn">New Job Posting</a>
+        </div>
     </div>
-    <div *ngFor="let job of jobPosting" (click)="openJobDetail(job)">
+    <div *ngFor="let job of jobPosting | search: searchTerm" (click)="openJobDetail(job)">
         <app-card [cardTitle]="job.title" [cardDesc]="job.desc" [cardLocation]="job.location" [cardDate]="job.date"></app-card>
     </div>
 </div>
