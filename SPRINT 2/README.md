@@ -28,11 +28,13 @@ The aim of this project is to establish a career services platform that enables 
 &nbsp;
 
 ## **TECHNOLOGY STACK**
-- FRONT-END : HTML, CSS and JS 
+- FRONT-END : Angular 
 
 - BACK-END : NodeJS
 
 - DATABASE : SQL Server
+
+- PROJECT MANAGEMENT : GitHub
 
 &nbsp;
 
