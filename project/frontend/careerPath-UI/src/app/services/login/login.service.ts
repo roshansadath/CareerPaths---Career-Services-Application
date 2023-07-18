@@ -21,6 +21,6 @@ export class LoginService {
   sendSignupData(data: any): Observable<any>{
     console.log(data);
     // let formData = JSON.stringify(data);
-    return this.http.post(`${APIUrl}/signup`, data);
+    return this.http.post(`${APIUrl}/user`, data);
   }
 }

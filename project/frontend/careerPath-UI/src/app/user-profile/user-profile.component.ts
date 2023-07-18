@@ -48,7 +48,7 @@ getUserDetails(){
       this.name = response.name;
       this.email = response.email;
       this.username = response.username;
-      this.role = response.role;
+      this.role = response.userType;
 
       this.userService.setRole(this.role);
     }, error: err => {

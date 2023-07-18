@@ -31,10 +31,11 @@ export class LoginComponent {
     this.loginService.sendLoginData(this.loginForm.value)
     .subscribe({
       next: response=> {
-
+        localStorage.setItem('userToken', response.token);
+        this.router.navigate(['/profile']);
       }, error: err => {
       console.log(err);
-      this.router.navigate(['/profile']);
+      
     }
     });  
   }

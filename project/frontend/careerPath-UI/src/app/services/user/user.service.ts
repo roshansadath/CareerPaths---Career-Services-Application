@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { APIUrl } from 'src/app/constants/constant';
@@ -11,9 +11,13 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   role: string = '';
+  count: number = 0;
 
   setRole(role: string){
-    this.role = role;
+    if(this.count == 0){
+      this.role = role;
+      this.count++;
+    }
   }
 
   getRole(){
@@ -21,6 +25,8 @@ export class UserService {
   }
 
   getUserData(): Observable<any>{
-    return this.http.get(`${APIUrl}/user/details`);
+    const token = localStorage.getItem('userToken');
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.get(`${APIUrl}/user`, {headers: headers});
   }
 }

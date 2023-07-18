@@ -15,11 +15,11 @@ export class SignupComponent {
     private formBuilder: FormBuilder,
     private router: Router){
       this.signupForm = this.formBuilder.group({
-        signupName: '',
-        signupUsername: '',
-        signupEmail: '',
-        signupPassword: '',
-        role: ''
+        username: '',
+        name: '',
+        email: '',
+        password: '',
+        userType: ''
       });
     }
 
