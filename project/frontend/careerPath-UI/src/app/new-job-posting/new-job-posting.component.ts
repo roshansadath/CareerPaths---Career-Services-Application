@@ -17,7 +17,8 @@ export class NewJobPostingComponent {
       jobTitle: '',
       jobDesc: '',
       nameOfTeam: '',
-      payRange: ''
+      payRange: '',
+      location: ''
     })
   }
 
@@ -26,7 +27,15 @@ export class NewJobPostingComponent {
   }
 
   submitNewFormData(): void{
-    this.employeeService.postNewJobData(this.jobPostingForm.value)
+    console.log(this.jobPostingForm.value);
+    let data = {
+      job_designation: this.jobPostingForm.value.jobTitle,
+      job_description: this.jobPostingForm.value.jobDesc,
+      location: this.jobPostingForm.value.location,
+      name_of_the_team: this.jobPostingForm.value.nameOfTeam,
+      pay_range: this.jobPostingForm.value.payRange
+    }
+    this.employeeService.postNewJobData(data)
     .subscribe({
       next: response=> {
         if(response.statusCode == 200){

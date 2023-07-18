@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class EmployerDashboardComponent {
   searchTerm: string = '';
   ngOnInit(){
-
+    this.getJobPostings();
   }
 
   constructor(private employerService: EmployerService,
