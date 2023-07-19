@@ -1,4 +1,17 @@
+<head>
+  <link rel="stylesheet" href="login.component.css">
+  <title>CareerPaths-Login</title>
+</head>
+<div class="heading-container">
+  <h2 class="shadows">CareerPaths</h2>
+</div>
+
 <div class="container">
+  <div class="panel panel-left">
+    <!-- Image panel -->
+    <img src="../../assets/Login.svg" alt="Signin Image" class="panel__image">
+  </div>
+  <div class="panel panel-right">
     <!-- Login Form -->
     <form [formGroup]="loginForm" (ngSubmit)="submitLoginData()" class="form" id="login">
       <!-- Login Form Title -->
@@ -25,8 +38,8 @@
       </p>
       <p class="form__text">
         <!-- Link for creating a new account -->
-        <a class="form__link" routerLink="/signup">Don't have an Account? Create Account</a>
+        <a class="form__link" href="../signup/signup.component.html">Don't have an Account? Create Account</a>
       </p>
     </form>
-
   </div>
+</div>
