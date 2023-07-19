@@ -32,9 +32,33 @@
                     <label>Candidate List:</label>
                 </div>
                 <div *ngFor="let candidate of candidateList" >
-                    <app-card (childRejectClicked)="handleRejectClick($event)"
+                    <div *ngIf="candidate.status == 'Pending'">
+                        <app-card (childRejectClicked)="handleRejectClick($event)"
                     (childInviteClicked)="handleInviteClick($event)"
                     (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.userId"></app-card>
+                    </div>
+                </div>
+
+                <div>
+                    <label>Invited Candidate List:</label>
+                </div>
+                <div *ngFor="let candidate of candidateList" >
+                    <div *ngIf="candidate.status == 'Invite'">
+                        <app-card (childRejectClicked)="handleRejectClick($event)"
+                    (childInviteClicked)="handleInviteClick($event)"
+                    (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.userId" [hide]="true"></app-card>
+                    </div>
+                </div>
+
+                <div>
+                    <label>Rejected Candidate List:</label>
+                </div>
+                <div *ngFor="let candidate of candidateList" >
+                    <div *ngIf="candidate.status == 'Reject'">
+                        <app-card (childRejectClicked)="handleRejectClick($event)"
+                    (childInviteClicked)="handleInviteClick($event)"
+                    (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.userId" [hide]="true"></app-card>
+                    </div>
                 </div>
             </div>
             <div *ngIf="role == 'student'">

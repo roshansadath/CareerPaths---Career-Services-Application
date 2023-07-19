@@ -41,11 +41,11 @@ export class JobPostingDetailComponent {
   empty: string = '';
 
   candidateList = [
-    { userId: 1, name: 'C1', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
-    { userId: 2, name: 'C2', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
-    { userId: 3, name: 'C3', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
-    { userId: 4, name: 'C4', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
-    { userId: 5, name: 'C5', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
+    { userId: 1, name: 'C1', username: 'C!!!!', email: 'C@gmail.com', role: 'student', status: 'Pending'},
+    { userId: 2, name: 'C2', username: 'C!!!!', email: 'C@gmail.com', role: 'student', status: 'Pending'},
+    { userId: 3, name: 'C3', username: 'C!!!!', email: 'C@gmail.com', role: 'student', status: 'Pending'},
+    { userId: 4, name: 'C4', username: 'C!!!!', email: 'C@gmail.com', role: 'student', status: 'Pending'},
+    { userId: 5, name: 'C5', username: 'C!!!!', email: 'C@gmail.com', role: 'student', status: 'Pending'},
 
   ];
 
@@ -136,12 +136,12 @@ export class JobPostingDetailComponent {
     // console.log(this.postId);
     for(let i = 0 ; i < this.JobApplicationStudentData.length  ; i++){
       if(this.JobApplicationStudentData[i].postId == this.postId && this.JobApplicationStudentData[i].userId == id){
-        applicationId = this.JobApplicationStudentData.applicationId;
+        applicationId = this.JobApplicationStudentData[i].applicationId;
         break;
       }
     }
     let body = {
-      status: 'Reject',
+      status: 'Invite',
       postId: this.postId,
       userId: id
     }
@@ -174,6 +174,7 @@ export class JobPostingDetailComponent {
       // Loop over the student data
       for (let i = 0; i < this.JobApplicationStudentData.length; i++) {
         let student = this.JobApplicationStudentData[i].User;
+        student.status = this.JobApplicationStudentData[i].status;
         // Perform operations on each student
         console.log(student);
         this.candidateList.push(student);

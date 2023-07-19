@@ -13,6 +13,9 @@ export class CardComponent {
   @Input() cardDate = '';
 
   @Input() id: number | undefined;
+
+  @Input() hide: boolean | undefined;
+  
   @Output() childRejectClicked = new EventEmitter<number>();
   @Output() childInviteClicked = new EventEmitter<number>();
   @Output() childDetailClicked = new EventEmitter<number>();
