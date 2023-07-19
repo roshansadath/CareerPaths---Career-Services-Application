@@ -41,4 +41,10 @@ export class StudentService {
     return this.http.post(`${APIUrl}/job_application`,data ,{ headers: headers });
   }
 
+  getAllAppliedJobs(){
+    const token = localStorage.getItem('userToken');
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.get(`${APIUrl}/job_application` ,{ headers: headers });
+  }
+
 }

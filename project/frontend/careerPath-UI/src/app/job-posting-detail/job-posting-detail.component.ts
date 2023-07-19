@@ -14,6 +14,9 @@ export class JobPostingDetailComponent {
   ngOnInit(){
     this.role = this.userService.getRole();
     this.setJobPostingDetailData();
+    if(this.role == 'student'){
+      this.getAllJobsApplied();
+    }
   }
   constructor(private employerService: EmployerService,
     private studentService: StudentService,
@@ -29,6 +32,7 @@ export class JobPostingDetailComponent {
   postId: number = -1;
 
   role: string = '';
+  applied: boolean = false;
 
   empty: string = '';
 
@@ -65,11 +69,34 @@ export class JobPostingDetailComponent {
     this.studentService.applyForJob(data).subscribe({
       next: response=> {
         window.alert("Applied");
+        this.router.navigate(['/dashboard']);
       }, error: err => {
       console.log(err);
     }
     });
   }
+
+  getAllJobsApplied(){
+    this.studentService.getAllAppliedJobs().subscribe({
+      next: response=> {
+        console.log(response);
+        let data: any;
+        data = response;
+        const foundObject = data.find((obj: { postId: number; }) => obj.postId === this.postId);
+        console.log(foundObject);
+        if(foundObject != undefined){
+          this.applied = true;
+        }
+        else{
+          this.applied = false;
+        }
+
+      }, error: err => {
+      console.log(err);
+    }
+    })
+  }
+
 
   
 }
