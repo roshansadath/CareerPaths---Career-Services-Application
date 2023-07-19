@@ -33,6 +33,7 @@ export class JobPostingDetailComponent {
   payRange: string = '21000';
 
   postId: number = -1;
+  JobApplicationStudentData: any = [];
 
   role: string = '';
   applied: boolean = false;
@@ -40,11 +41,11 @@ export class JobPostingDetailComponent {
   empty: string = '';
 
   candidateList = [
-    { id: 1, name: 'C1', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
-    { id: 2, name: 'C2', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
-    { id: 3, name: 'C3', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
-    { id: 4, name: 'C4', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
-    { id: 5, name: 'C5', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
+    { userId: 1, name: 'C1', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
+    { userId: 2, name: 'C2', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
+    { userId: 3, name: 'C3', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
+    { userId: 4, name: 'C4', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
+    { userId: 5, name: 'C5', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
 
   ];
 
@@ -101,17 +102,62 @@ export class JobPostingDetailComponent {
   }
 
   handleRejectClick(id: any) {
-    console.log('Child clicked with ID:', id);
+    // console.log('Child clicked with ID:', id);
+    let applicationId = -1;
+    for(let i = 0 ; i < this.JobApplicationStudentData.length  ; i++){
+      console.log(this.postId + ' ' + id);
+      console.log(this.JobApplicationStudentData[i].postId + ' ' + this.JobApplicationStudentData[i].userId);
+      if(Number(this.JobApplicationStudentData[i].postId) == this.postId && Number(this.JobApplicationStudentData[i].userId) == id){
+        applicationId = this.JobApplicationStudentData[i].applicationId;
+        break;
+      }
+    }
+    // console.log(applicationId);
     // Do something with the ID in the parent component
+    let body = {
+      status: 'Reject',
+      postId: this.postId,
+      userId: id
+    }
+    this.employerService.rejectCandidate(applicationId, body).subscribe({
+      next: response=> {
+        window.alert('Candidate Rejected!');
+        this.getStudentList()
+      }, error: err => {
+      console.log(err);
+    }
+    })
   }
 
   handleInviteClick(id: any){
     console.log('Child invite clicked with ID:', id);
+    let applicationId = -1;
+    // console.log(this.JobApplicationStudentData);
+    // console.log(this.postId);
+    for(let i = 0 ; i < this.JobApplicationStudentData.length  ; i++){
+      if(this.JobApplicationStudentData[i].postId == this.postId && this.JobApplicationStudentData[i].userId == id){
+        applicationId = this.JobApplicationStudentData.applicationId;
+        break;
+      }
+    }
+    let body = {
+      status: 'Reject',
+      postId: this.postId,
+      userId: id
+    }
+    this.employerService.inviteCandidate(applicationId, body).subscribe({
+      next: response=> {
+        window.alert('Candidate Invited for Interview!');
+        this.getStudentList()
+      }, error: err => {
+      console.log(err);
+    }
+    })
   }
 
   handleDetailClick(id: any){
     
-    let foundObject = this.candidateList.find((obj: { id: number; }) => obj.id === id);
+    let foundObject = this.candidateList.find((obj: { userId: number; }) => obj.userId === id);
     this.candidateDetails(foundObject);
     // console.log('Child detail clicked with ID:', id);
   }
@@ -123,11 +169,11 @@ export class JobPostingDetailComponent {
       next: response=> {
         // console.log(response);
         // this.candidateList = response;
-        let studentData = response; // Assuming the response is an array of student data
+        this.JobApplicationStudentData = response; // Assuming the response is an array of student data
       this.candidateList = [];
       // Loop over the student data
-      for (let i = 0; i < studentData.length; i++) {
-        let student = studentData[i].User;
+      for (let i = 0; i < this.JobApplicationStudentData.length; i++) {
+        let student = this.JobApplicationStudentData[i].User;
         // Perform operations on each student
         console.log(student);
         this.candidateList.push(student);

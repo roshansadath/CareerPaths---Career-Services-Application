@@ -31,7 +31,8 @@ export class CardComponent {
   }
 
   rejectCandidate() {
-    // console.log("click")
+    console.log(this.id);
+    
     this.childRejectClicked.emit(this.id);
   }
 

@@ -34,7 +34,7 @@
                 <div *ngFor="let candidate of candidateList" >
                     <app-card (childRejectClicked)="handleRejectClick($event)"
                     (childInviteClicked)="handleInviteClick($event)"
-                    (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.id"></app-card>
+                    (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.userId"></app-card>
                 </div>
             </div>
             <div *ngIf="role == 'student'">

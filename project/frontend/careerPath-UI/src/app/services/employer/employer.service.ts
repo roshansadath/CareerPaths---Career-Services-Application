@@ -35,4 +35,11 @@ export class EmployerService {
   getJobDetail(){
     return this.jobPostingData;
   }
+
+  rejectCandidate(applicationId: number, data: any): Observable<any>{
+    return this.http.put(`${APIUrl}/job_application/${applicationId}`,data);
+  }
+  inviteCandidate(applicationId: number, data: any): Observable<any>{
+    return this.http.put(`${APIUrl}/job_application/${applicationId}`,data);
+  }
 }
