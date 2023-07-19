@@ -9,7 +9,7 @@
 <div class="container">
   <div class="panel panel-left">
     <!-- Image panel -->
-    <img src="../../assets/Signin.svg" alt="Signin Image" class="panel__image">
+    <img src="../../assets/signin.svg" alt="Signin Image" class="panel__image">
   </div>
 <div class="panel panel-right"> 
   <form class="form" id="signup" [formGroup]="signupForm" (ngSubmit)="submitSignupData()">
@@ -54,7 +54,7 @@
       <div class="form__input-error-message"></div>
     </div>
     <!-- Submit button for signup form -->
-    <button class="btn btn-primary" type="submit">SignUp</button>
+    <button class="btn btn-primary submit__btn" type="submit">SignUp</button>
     <p class="form__text">
       <!-- Link for login instead of signup -->
       <a class="form__link" routerLink="/login">Already have an Account? Sign in</a>
