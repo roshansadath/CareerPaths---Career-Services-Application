@@ -37,11 +37,11 @@ export class JobPostingDetailComponent {
   empty: string = '';
 
   candidateList = [
-    { name: 'C1', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
-    { name: 'C2', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
-    { name: 'C3', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
-    { name: 'C4', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
-    { name: 'C5', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
+    { id: 1, name: 'C1', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
+    { id: 2, name: 'C2', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
+    { id: 3, name: 'C3', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
+    { id: 4, name: 'C4', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
+    { id: 5, name: 'C5', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
 
   ]
 
@@ -95,6 +95,22 @@ export class JobPostingDetailComponent {
       console.log(err);
     }
     })
+  }
+
+  handleRejectClick(id: any) {
+    console.log('Child clicked with ID:', id);
+    // Do something with the ID in the parent component
+  }
+
+  handleInviteClick(id: any){
+    console.log('Child invite clicked with ID:', id);
+  }
+
+  handleDetailClick(id: any){
+    
+    let foundObject = this.candidateList.find((obj: { id: number; }) => obj.id === id);
+    this.candidateDetails(foundObject);
+    // console.log('Child detail clicked with ID:', id);
   }
 
 

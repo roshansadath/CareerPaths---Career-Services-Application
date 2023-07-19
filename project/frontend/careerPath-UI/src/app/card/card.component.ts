@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -12,6 +12,11 @@ export class CardComponent {
   @Input() cardLocation = '';
   @Input() cardDate = '';
 
+  @Input() id: number | undefined;
+  @Output() childRejectClicked = new EventEmitter<number>();
+  @Output() childInviteClicked = new EventEmitter<number>();
+  @Output() childDetailClicked = new EventEmitter<number>();
+
   student: boolean = false;
 
   ngOnInit(){
@@ -23,6 +28,19 @@ export class CardComponent {
       else{
         this.student = false;
       }
+  }
+
+  rejectCandidate() {
+    // console.log("click")
+    this.childRejectClicked.emit(this.id);
+  }
+
+  inviteForInterview(){
+    this.childInviteClicked.emit(this.id);
+  }
+
+  viewDetail(){
+    this.childDetailClicked.emit(this.id);
   }
 
 }
