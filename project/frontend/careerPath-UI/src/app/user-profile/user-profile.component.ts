@@ -16,7 +16,8 @@ role: string = 'student';
 tempInternalData: boolean = false;
 
 ngOnInit(){
-  this.tempInternalData = this.studentService.getInternalDataValue()
+  this.tempInternalData = this.studentService.getInternalDataValue();
+  console.log(this.tempInternalData);
   if(this.tempInternalData){
     let candidateData: any;
     candidateData = this.studentService.candidateDetails;
@@ -39,6 +40,7 @@ ngOnDestroy(){
   this.studentService.setInternalDataValue(false);
   this.tempInternalData = false;
   this.userService.setRole(this.role);
+  this.userService.count = 0;
 }
 
 getUserDetails(){

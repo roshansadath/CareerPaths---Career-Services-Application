@@ -18,6 +18,8 @@ export class HeaderComponent {
   }
   logout(){
     this.userService.count = 0;
+    
     this.router.navigate(['/login']);
+    
   }
 }

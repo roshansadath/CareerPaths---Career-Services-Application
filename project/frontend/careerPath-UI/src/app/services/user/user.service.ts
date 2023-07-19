@@ -14,13 +14,18 @@ export class UserService {
   count: number = 0;
 
   setRole(role: string){
+    console.log(this.count);
     if(this.count == 0){
+      console.log(role);
       this.role = role;
       this.count++;
+      console.log('Called 1');
     }
+    console.log('Called 2');
   }
 
   getRole(){
+    console.log(this.role);
     return this.role;
   }
 
