@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const sequelize=require('./config/database');
+const jobPostRoutes=require('./routes/jobPostRoutes');
+const jobApplicationRoutes=require('./routes/jobApplicationRoutes');
 const cors=require('cors');
 
 
