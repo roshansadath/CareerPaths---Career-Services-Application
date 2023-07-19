@@ -32,11 +32,15 @@ export class LoginComponent {
     .subscribe({
       next: response=> {
         localStorage.setItem('userToken', response.token);
+        this.emitChanges();
         this.router.navigate(['/profile']);
       }, error: err => {
       console.log(err);
       
     }
     });  
+  }
+  emitChanges() {
+    this.loginService.notifyChanges();
   }
 }

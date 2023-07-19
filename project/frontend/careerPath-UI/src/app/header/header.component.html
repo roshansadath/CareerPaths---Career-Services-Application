@@ -1,12 +1,13 @@
 <div class="navbar bg-dark">
+  <div style="color: white; font-size: 20px;">CareerPaths </div>
     <div class="nav-item">
-      <a *ngIf="setter != 0" class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a *ngIf="showNavOptions" class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
     </div>
     <div class="nav-item">
-      <a *ngIf="setter != 0" class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a>
+      <a *ngIf="showNavOptions" class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a>
     </div>
     <div class="nav-item">
-      <a *ngIf="setter != 0" class="nav-link" routerLinkActive="active" (click)="logout()">Logout</a>
+      <a *ngIf="showNavOptions" class="nav-link" routerLinkActive="active" (click)="logout()">Logout</a>
     </div>
   </div>
   

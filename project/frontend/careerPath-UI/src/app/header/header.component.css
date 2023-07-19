@@ -8,6 +8,7 @@
   
   .nav-item {
     margin-right: 10px; /* Adjust the spacing between nav-items */
+    cursor: pointer;
   }
   
   .nav-link {
