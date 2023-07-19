@@ -14,7 +14,7 @@ export class SearchPipe implements PipeTransform {
     return items.filter(item => {
       // console.log(item);
       // Adjust the property based on your data structure
-      const itemValue = item.title.toLowerCase();
+      const itemValue = item.job_designation.toLowerCase();
       return itemValue.includes(searchTerm);
     });
   }
