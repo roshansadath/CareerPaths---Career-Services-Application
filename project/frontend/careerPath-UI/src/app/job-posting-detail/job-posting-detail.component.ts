@@ -17,6 +17,9 @@ export class JobPostingDetailComponent {
     if(this.role == 'student'){
       this.getAllJobsApplied();
     }
+    else{
+      this.getStudentList();
+    }
   }
   constructor(private employerService: EmployerService,
     private studentService: StudentService,
@@ -43,7 +46,7 @@ export class JobPostingDetailComponent {
     { id: 4, name: 'C4', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
     { id: 5, name: 'C5', username: 'C!!!!', email: 'C@gmail.com', role: 'student'},
 
-  ]
+  ];
 
   setJobPostingDetailData(){
     let data = this.employerService.getJobDetail();
@@ -111,6 +114,29 @@ export class JobPostingDetailComponent {
     let foundObject = this.candidateList.find((obj: { id: number; }) => obj.id === id);
     this.candidateDetails(foundObject);
     // console.log('Child detail clicked with ID:', id);
+  }
+
+
+  getStudentList(){
+    console.log("POPOPOPOP");
+    this.studentService.getStudentListOnJobPostings(this.postId).subscribe({
+      next: response=> {
+        // console.log(response);
+        // this.candidateList = response;
+        let studentData = response; // Assuming the response is an array of student data
+      this.candidateList = [];
+      // Loop over the student data
+      for (let i = 0; i < studentData.length; i++) {
+        let student = studentData[i].User;
+        // Perform operations on each student
+        console.log(student);
+        this.candidateList.push(student);
+      }
+
+      }, error: err => {
+      console.log(err);
+    }
+    })
   }
 
 

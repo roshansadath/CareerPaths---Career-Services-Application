@@ -47,4 +47,8 @@ export class StudentService {
     return this.http.get(`${APIUrl}/job_application` ,{ headers: headers });
   }
 
+  getStudentListOnJobPostings(postId: any): Observable<any>{
+    return this.http.get(`${APIUrl}/job_application/jobpost/${postId}`);
+  }
+
 }
