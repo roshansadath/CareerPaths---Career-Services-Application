@@ -1,0 +1,131 @@
+body {
+    --color-primary: #009579; /* Primary color */
+    --color-primary-dark: #007f67; /* Darker shade of primary color */
+    --color-secondary: #252c6a; /* Secondary color */
+    --color-error: #cc3333; /* Error color */
+    --color-success: #4bb544; /* Success color */
+    --border-radius: 4px; /* Border radius */
+  
+    margin: 0; /* Remove default margin */
+    height: 100vh; /* Set height to full viewport height */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center align vertically */
+    justify-content: center; /* Center align horizontally */
+    font: size 18px; /* Set font size */
+    /*background: var(--color-primary); /* Set background color using primary color variable */
+    background-image: url(./Background.jpg); /* Background image */
+    background-size: cover; /* Adjust background image size */
+  }
+  
+  .container {
+    width: 400px; /* Set container width */
+    max-width: 400px; /* Set maximum container width */
+    margin: 1rem; /* Add margin around the container */
+    padding: 2rem; /* Add padding inside the container */
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9); /* Add box shadow effect */
+    border-radius: var(--border-radius); /* Apply border radius using variable */
+    background: #ffff; /* Set background color to white */
+    background-blend-mode:darken;
+  }
+  
+  .form--hidden {
+    display: none; /* Hide the form when it has the form--hidden class */
+  }
+  
+  .container,
+  .form__input,
+  .form__button {
+    font: 500 1rem 'Quicksand', sans-serif; /* Set font style for container, form inputs, and buttons */
+  }
+  
+  .form > *:first-child {
+    margin-top: 0; /* Remove top margin from the first child of form */
+  }
+  
+  .form > *:last-child {
+    margin-bottom: 0; /* Remove bottom margin from the last child of form */
+  }
+  
+  .form__title {
+    margin-bottom: 2rem; /* Add margin below the form title */
+    text-align: center; /* Center align the form title */
+  }
+  
+  .form__message {
+    text-align: center; /* Center align form messages */
+    margin-bottom: 1rem; /* Add margin below form messages */
+  }
+  
+  .form__message--success {
+    color: var(--color-success); /* Set text color for success message using success color variable */
+  }
+  
+  .form__message--error {
+    color: var(--color-error); /* Set text color for error message using error color variable */
+  }
+  
+  .form__input-group {
+    margin-bottom: 1rem; /* Add margin below each input group in the form */
+  }
+  
+  .form__input {
+    display: block; /* Display inputs as block elements */
+    width: 100%; /* Set input width to fill the available space */
+    padding: 0.75rem; /* Add padding inside inputs */
+    box-sizing: border-box; /* Include padding and border in input's total width */
+    border-radius: var(--border-radius); /* Apply border radius using variable */
+    border: 1px solid #dddd; /* Set border style */
+    outline: none; /* Remove outline on focus */
+    background: #eeee; /* Set input background color */
+    transition: background 0.3s, border-color 0.2s; /* Add transition effect for background and border color */
+  }
+  
+  .form__input:focus {
+    border-color: var(--color-primary); /* Set border color on input focus using primary color variable */
+    background: #ffff; /* Set background color on input focus */
+  }
+  
+  .form__input--error {
+    color: var(--color-error); /* Set text color for error state using error color variable */
+    border-color: var(--color-error); /* Set border color for error state using error color variable */
+  }
+  
+  .form__input-error-message {
+    margin-top: 0.5rem; /* Add margin above the error message */
+    font-size: 0.85rem; /* Set font size for error message */
+    color: var(--color-error); /* Set text color for error message using error color variable */
+  }
+  
+  .form__button {
+    width: 100%; /* Set button width to fill the available space */
+    padding: 1rem 2rem; /* Add padding inside the button */
+    font-weight: bold; /* Set font weight for the button */
+    font-size: 1.1rem; /* Set font size for the button */
+    color: #ffff; /* Set text color to white */
+    border: none; /* Remove button border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    background: var(--color-primary); /* Set button background color using primary color variable */
+  }
+  
+  .form__button:hover {
+    background: var(--color-primary-dark); /* Set button background color on hover using darker shade of primary color */
+  }
+  
+  .form__button:active {
+    transform: scale(0.98); /* Add scaling effect on button click */
+  }
+  
+  .form__text {
+    text-align: center; /* Center align form text */
+  }
+  
+  .form__link {
+    scale: var(--color-secondary); /* Set link color using secondary color variable */
+    text-decoration: none; /* Remove default link underline */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  .form__link:hover {
+    text-decoration: underline; /* Add underline on link hover */
+  }
+  

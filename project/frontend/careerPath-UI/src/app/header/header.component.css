@@ -1,0 +1,21 @@
+.navbar {
+    display: flex; /* Set the display property to flex for horizontal alignment */
+    justify-content: space-between; /* Arrange the nav-items with space in between */
+    background-color: #343a40; /* Set the dark background color */
+    padding: 10px; /* Add padding for spacing */
+    border-radius: 0;
+  }
+  
+  .nav-item {
+    margin-right: 10px; /* Adjust the spacing between nav-items */
+    cursor: pointer;
+  }
+  
+  .nav-link {
+    color: #fff; /* Set the color of the navbar links */
+  }
+  
+  .nav-link.active {
+    font-weight: bold; /* Style the active navbar link */
+  }
+  

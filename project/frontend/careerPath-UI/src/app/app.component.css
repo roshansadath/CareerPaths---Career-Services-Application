@@ -1,0 +1,22 @@
+body{
+    --color-primary: #009579; /* Primary color */
+    --color-primary-dark: #007f67; /* Darker shade of primary color */
+    --color-secondary: #252c6a; /* Secondary color */
+    --color-error: #cc3333; /* Error color */
+    --color-success: #4bb544; /* Success color */
+    --border-radius: 4px; /* Border radius */
+  
+    margin: 0; /* Remove default margin */
+    height: 100vh; /* Set height to full viewport height */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center align vertically */
+    justify-content: center; /* Center align horizontally */
+    font: size 18px; /* Set font size */
+    /*background: var(--color-primary); /* Set background color using primary color variable */
+    background-image: url(../assets/Background.jpg); /* Background image */
+    background-size: cover; /* Adjust background image size */
+}
+
+*{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

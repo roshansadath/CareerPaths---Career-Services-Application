@@ -1,0 +1,48 @@
+  <head>
+    <link rel="stylesheet" href="new-job-posting.component.css">
+    <title>jobPostingForm</title>
+  </head>
+  <div class="container">
+    <div class="panel panel-left">
+      <!-- Image panel -->
+      <img src="../../assets/jobposting.svg" alt="jobposting Image" class="panel__image">
+    </div>
+    <div class="panel panel-right">
+      <div class="posting-container">
+        <div>
+            <h2 class="form__heading"><b>New Job Posting</b></h2>
+        </div>
+       <div class="form-container">
+            <form [formGroup]="jobPostingForm" (ngSubmit)="submitNewFormData()">
+                <div>
+                    <div><label class="form__label">Job Title: </label></div>
+                    <div><input formControlName="jobTitle" class="form-control" type="text" placeholder="Eg: Software Developer"></div>
+                </div>
+                <div>
+                    <div><label class="form__label">Job Description: </label></div>
+                    <div><textarea formControlName="jobDesc" class="form-control" rows="5" cols="40" placeholder="Eg: required experienece, required skills, good to have skills etc."></textarea>
+                    </div>
+                </div>
+                <div>
+                    <div><label class="form__label">Name of team: </label></div>
+                    <div><input formControlName="nameOfTeam" class="form-control" type="text" placeholder="Eg: Backend Team "></div>
+                </div>
+                <div>
+                    <div><label class="form__label">Pay range: </label></div>
+                    <div><input formControlName="payRange" class="form-control" type="text" placeholder="Eg: 70k-80k CAD/annum"></div>
+                </div>
+    
+                <div>
+                    <div><label class="form__label">Location: </label></div>
+                    <div><input formControlName="location" class="form-control" type="text" placeholder="Eg: Toronoto"></div>
+                </div>
+    
+                <div>
+                    <button class="btn btn-primary" type="submit">Post Job!</button>
+                </div>
+            </form>
+       </div>
+    </div>
+    </div>
+      
+</div>
