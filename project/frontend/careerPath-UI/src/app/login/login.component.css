@@ -1,11 +1,4 @@
 body {
-  --color-primary: #009579; /* Primary color */
-  --color-primary-dark: #045042; /* Darker shade of primary color */
-  --color-secondary: #252c6a; /* Secondary color */
-  --color-error: #cc3333; /* Error color */
-  --color-success: #4bb544; /* Success color */
-  --color-shadow: #07f5c9;
-  --border-radius: 4px; /* Border radius */
 
   margin: 0; /* Remove default margin */
   height: 100vh; /* Set height to full viewport height */
@@ -13,27 +6,29 @@ body {
   align-items: center; /* Center align vertically */
   justify-content: center; /* Center align horizontally */
   font: size 18px; /* Set font size */
-  background: var(--color-primary); /* Set background color using primary color variable */
-  /*background-image: url('../../assets/Background.jpg'); /* Background image */
+  background: linear-gradient(-45deg, #009579,#045042);
   background-size: cover; /* Adjust background image size */
-}
-
-
-body {
-  /*background-image: url('../../assets/Background.jpg');*/
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
 }
 
 .container {
   display: flex;
+  margin: 0 auto; /* Remove default margin */
+  align-items: center; /* Center align vertically */
+  justify-content: center; /* Center align horizontally */
+  font: size 18px; /* Set font size */
+  background: #009579; 
+  background-size: cover; /* Adjust background image size */
+  flex-direction: column;
+  width: 400px;
+  height: 500px;
+  max-width: 90%;
+  margin-top: 2rem;
+  padding: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+  background-color: #fff;
 }
+
 
 .panel {
   flex: 1;
@@ -68,7 +63,7 @@ body {
 
 .shadows:hover {
    /* Update the shadow values */
-  text-shadow: -5px 5px 20px var(--color-shadow);
+  text-shadow: -5px 5px 20px #07f5c9;
 }
 .heading-container {
   display: flex;
@@ -87,29 +82,8 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 400px;
-  height: 500px;
-  max-width: 90%;
-  margin-top: 2rem;
-  padding: 2rem;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
-  border-radius: 4px;
-  background-color: #fff;
-}
-
 .form--hidden {
   display: none; /* Hide the form when it has the form--hidden class */
-}
-
-.container,
-.form__input,
-.form__button {
-  font: 500 1rem 'Quicksand', sans-serif; /* Set font style for container, form inputs, and buttons */
 }
 
 .form > *:first-child {
@@ -131,11 +105,11 @@ body {
 }
 
 .form__message--success {
-  color: var(--color-success); /* Set text color for success message using success color variable */
+  color: #4bb544; /* Set text color for success message using success color variable */
 }
 
 .form__message--error {
-  color: var(--color-error); /* Set text color for error message using error color variable */
+  color: #cc3333; /* Set text color for error message using error color variable */
 }
 
 .form__input-group {
@@ -147,7 +121,7 @@ body {
   width: 100%; /* Set input width to fill the available space */
   padding: 0.75rem; /* Add padding inside inputs */
   box-sizing: border-box; /* Include padding and border in input's total width */
-  border-radius: var(--border-radius); /* Apply border radius using variable */
+  border-radius: 4px; /* Apply border radius using variable */
   border: 1px solid #dddd; /* Set border style */
   outline: none; /* Remove outline on focus */
   background: #eeee; /* Set input background color */
@@ -155,38 +129,38 @@ body {
 }
 
 .form__input:focus {
-  border-color: var(--color-primary); /* Set border color on input focus using primary color variable */
+  border-color: #009579; /* Set border color on input focus using primary color variable */
   background: #ffff; /* Set background color on input focus */
 }
 
 .form__input--error {
-  color: var(--color-error); /* Set text color for error state using error color variable */
-  border-color: var(--color-error); /* Set border color for error state using error color variable */
+  color: #cc3333; /* Set text color for error state using error color variable */
+  border-color: #cc3333; /* Set border color for error state using error color variable */
 }
 
 .form__input-error-message {
   margin-top: 0.5rem; /* Add margin above the error message */
   font-size: 0.85rem; /* Set font size for error message */
-  color: var(--color-error); /* Set text color for error message using error color variable */
+  color: #cc3333; /* Set text color for error message using error color variable */
 }
 
-.btn.btn-primary {
-  width: 100%; /* Set button width to fill the available space */
-  padding: 1rem 2rem; /* Add padding inside the button */
-  font-weight: bold; /* Set font weight for the button */
-  font-size: 1.1rem; /* Set font size for the button */
-  color: #ffff; /* Set text color to white */
-  border: none; /* Remove button border */
-  cursor: pointer; /* Change cursor to pointer on hover */
-  background: var(--color-primary); /* Set button background color using primary color variable */
+.login__btn{
+  width: 100% !important; /* Set button width to fill the available space */
+  padding: 1rem 2rem !important; /* Add padding inside the button */
+  font-weight: bold !important; /* Set font weight for the button */
+  font-size: 1.1rem !important; /* Set font size for the button */
+  color: #fff !important; /* Set text color to white */
+  border: none !important; /* Remove button border */
+  cursor: pointer !important; /* Change cursor to pointer on hover */
+  background: #009579; /* Set button background color using primary color variable */
 }
 
-.btn.btn-primary:hover {
-  background: var(--color-primary-dark); /* Set button background color on hover using darker shade of primary color */
+.login__btn:hover {
+  background: #045042 !important; /* Set button background color on hover using darker shade of primary color */
 }
 
-.btn.btn-primary:active {
-  transform: scale(0.98); /* Add scaling effect on button click */
+.login__btn:active {
+  transform: scale(0.98) !important; /* Add scaling effect on button click */
 }
 
 .form__text {
@@ -194,7 +168,7 @@ body {
 }
 
 .form__link {
-  scale: var(--color-secondary); /* Set link color using secondary color variable */
+  scale: #252c6a; /* Set link color using secondary color variable */
   color: #fff;
   text-decoration: none; /* Remove default link underline */
   cursor: pointer; /* Change cursor to pointer on hover */
