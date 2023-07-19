@@ -39,7 +39,7 @@ export class NewJobPostingComponent {
     .subscribe({
       next: response=> {
         // if(response.statusCode == 200){
-        //   window.alert("Job Posting Successful!");
+          window.alert("Job Posting Successful!");
         // }
       }, error: err => {
       console.log(err);

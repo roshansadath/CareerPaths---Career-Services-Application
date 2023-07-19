@@ -36,7 +36,7 @@ export class LoginComponent {
         this.router.navigate(['/profile']);
       }, error: err => {
       console.log(err);
-      
+      window.alert('Username or password incorrect!');
     }
     });  
   }
