@@ -67,7 +67,7 @@ body {
 }
 
 .shadows:hover {
-   /* Update the shadow values */
+  /* Update the shadow values */
   text-shadow: -5px 5px 20px var(--color-shadow);
 }
 .heading-container {
@@ -93,7 +93,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 400px;
-  height: 500px;
+  height: 550px;
   max-width: 90%;
   margin-top: 2rem;
   padding: 2rem;

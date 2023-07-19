@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { EmployerService } from '../services/employer/employer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employer-dashboard',
@@ -7,11 +8,13 @@ import { EmployerService } from '../services/employer/employer.service';
   styleUrls: ['./employer-dashboard.component.css']
 })
 export class EmployerDashboardComponent {
+  searchTerm: string = '';
   ngOnInit(){
-
+    this.getJobPostings();
   }
 
-  constructor(private employerService: EmployerService){
+  constructor(private employerService: EmployerService,
+    private router: Router){
 
   }
   jobPosting = [
@@ -37,6 +40,7 @@ export class EmployerDashboardComponent {
 
   openJobDetail(job: any){
     console.log(job);
-    this.employerService.getJobDetail(job);
+    this.employerService.setJobDetail(job);
+    this.router.navigate(['/dashboard/posting']);
   }
 }

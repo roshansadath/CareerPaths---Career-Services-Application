@@ -2,7 +2,9 @@
     <div class="flex-container">
         <div>
             <label>{{ !student? 'Job Designation:':'Candidate Name:' }}</label>
-            {{cardTitle}}
+            
+            <span *ngIf="!student">{{cardTitle}}</span>
+            <span *ngIf="student" (click)="viewDetail()"><a>{{cardTitle}}</a></span>
         </div>
         <div *ngIf="!student">
             <label>Description:</label>
@@ -17,8 +19,8 @@
             {{cardDate}}
         </div>
         <div *ngIf="student" style="text-align: end;">
-            <button class="btn btn-success">Invite for interview</button>
-            <button class="btn btn-danger">Reject</button>
+            <button class="btn btn-success" (click)="inviteForInterview()" *ngIf="!hide">Invite for interview</button>
+            <button class="btn btn-danger" (click)="rejectCandidate()" *ngIf="!hide">Reject</button>
         </div>
     </div>
 </div>

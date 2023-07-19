@@ -1,1 +1,2 @@
-<app-employer-dashboard></app-employer-dashboard>
+<app-employer-dashboard *ngIf="role == 'employer'"></app-employer-dashboard>
+<app-student-dashboard *ngIf="role == 'student'"></app-student-dashboard>

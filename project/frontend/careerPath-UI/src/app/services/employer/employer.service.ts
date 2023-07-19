@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { APIUrl } from 'src/app/constants/constant';
@@ -10,19 +10,36 @@ export class EmployerService {
 
   constructor(private http: HttpClient) { }
 
+  jobPostingData: any = {};
+
   getJobPostingListData(): Observable<any>{
-    return this.http.get(`${APIUrl}/employer/postings`);
+    const token = localStorage.getItem('userToken');
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.get(`${APIUrl}/job_post`, { headers : headers });
   }
 
   postNewJobData(data: any): Observable<any>{
-    return this.http.post(`${APIUrl}/employer/post/job`, data);
+    const token = localStorage.getItem('userToken');
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.post(`${APIUrl}/job_post`, data, { headers : headers });
   }
 
   getJobDetailAPI(data: any): Observable<any>{
     return this.http.get(`${APIUrl}/employer/postings/detail`, data);
   }
 
-  getJobDetail(data: any){
-    
+  setJobDetail(data: any){
+    this.jobPostingData = data;
+  }
+
+  getJobDetail(){
+    return this.jobPostingData;
+  }
+
+  rejectCandidate(applicationId: number, data: any): Observable<any>{
+    return this.http.put(`${APIUrl}/job_application/${applicationId}`,data);
+  }
+  inviteCandidate(applicationId: number, data: any): Observable<any>{
+    return this.http.put(`${APIUrl}/job_application/${applicationId}`,data);
   }
 }

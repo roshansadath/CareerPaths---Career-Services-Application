@@ -1,5 +1,9 @@
 <div class="container">
+    <div style="margin-left: 8%;">
+        <h1>User Details:</h1>
+    </div>
     <div class="flex-container">
+        
         <div>
             <div style="text-align: center;">
                 <img style="width: 70%; padding: 8px;" src="../../assets/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png">
@@ -14,8 +18,11 @@
                     <div class="detail-item">Username: {{ username }}</div>
                     <div class="detail-item">Email: {{ email }}</div>
                     <div class="detail-item">Password: *********</div>
-                    <div class="cv">
-                        <a href="#">Upload CV</a>
+                    <div class="cv" *ngIf="(!tempInternalData) || role == 'student'">
+                        <!-- <a href="#">Upload CV</a> -->
+                        <!-- <span>Upload CV:</span>
+                        <input type="file" class="file-upload" onchange="uploadFileUpdated(event.target.files)"> -->
+                        <app-upload *ngIf="role != 'employer'"></app-upload>
                     </div>
                 </div>
             </div>
