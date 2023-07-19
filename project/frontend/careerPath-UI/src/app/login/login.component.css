@@ -168,8 +168,7 @@ body {
 }
 
 .form__link {
-  scale: #252c6a; /* Set link color using secondary color variable */
-  color: #fff;
+  color: #009579;
   text-decoration: none; /* Remove default link underline */
   cursor: pointer; /* Change cursor to pointer on hover */
 }
