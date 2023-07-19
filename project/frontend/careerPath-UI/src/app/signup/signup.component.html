@@ -43,7 +43,13 @@
     </div>
     <div class="form__input-group">
       <!-- Input field for confirming password -->
-      <input type="text" formControlName="userType" class="form__input" autofocus placeholder="Role">
+      <!-- <input type="text" formControlName="userType" class="form__input" autofocus placeholder="Role"> -->
+      <select formControlName="userType" class="form__input">
+        <option value="" disabled selected>Choose a Role</option>
+        <option value="employer">Employer</option>
+        <option value="student">Student</option>
+        <!-- Add more options as needed -->
+      </select>
       <!-- Error message container for confirming password input -->
       <div class="form__input-error-message"></div>
     </div>
