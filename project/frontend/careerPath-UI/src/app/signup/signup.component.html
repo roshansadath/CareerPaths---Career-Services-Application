@@ -1,7 +1,18 @@
-<div class="container">
+<head>
+  <link rel="stylesheet" href="signup.component.css">
+  <title>CareerPaths-Login</title>
+</head>
+<div class="heading-container">
+  <h2 class="shadows">CareerPaths</h2>
+</div>
 
-<!-- Signup Form -->
-<form class="form" id="signup" [formGroup]="signupForm" (ngSubmit)="submitSignupData()">
+<div class="container">
+  <div class="panel panel-left">
+    <!-- Image panel -->
+    <img src="../../assets/Signin.svg" alt="Signin Image" class="panel__image">
+  </div>
+<div class="panel panel-right"> 
+  <form class="form" id="signup" [formGroup]="signupForm" (ngSubmit)="submitSignupData()">
     <!-- Signup Form Title -->
     <h1 class="form__title">Create Account</h1>
     <!-- Error message container for signup form -->
@@ -40,7 +51,10 @@
     <button class="btn btn-primary" type="submit">SignUp</button>
     <p class="form__text">
       <!-- Link for login instead of signup -->
-      <a routerLink="/login">Already have an Account? Sign in</a>
+      <a class="form__link" href="../login/login.component.html">Already have an Account? Sign in</a>
     </p>
   </form>
+</div>
+<!-- Signup Form -->
+
 </div>
