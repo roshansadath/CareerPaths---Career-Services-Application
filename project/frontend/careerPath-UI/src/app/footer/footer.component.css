@@ -1,5 +1,5 @@
 .footer {
-    background-color: #343a40;
+    background-color: #009579;
     padding: 20px 0;
     color: #fff;
     text-align: center;
@@ -9,7 +9,10 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-  
+  .text-muted
+  {
+    color: #ffff;
+  }
   .footer-content {
     display: flex;
     justify-content: space-between;
@@ -29,4 +32,12 @@
   .footer-info-line {
     margin-bottom: 5px;
   }
+  
+
+  .footer-info-line .social-icon {
+    margin-right: 10px; /* Adjust the spacing as needed */
+    color: #ffff;
+  }
+  
+
   

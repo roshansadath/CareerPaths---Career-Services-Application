@@ -1,8 +1,14 @@
 const express = require('express');
 const app = express();
 const sequelize=require('./config/database');
+const userRoutes=require('./routes/userRoutes');
+const loginRoutes=require('./routes/loginRoute');
+const jobPostRoutes=require('./routes/jobPostRoutes');
+const jobApplicationRoutes=require('./routes/jobApplicationRoutes');
 const cors=require('cors');
-
+const User=require('./model/user');
+const JobPost=require('./model/jobPost');
+const JobApplication=require('./model/jobApplications');
 
 
 sequelize.sync({alter:true})
@@ -13,11 +19,16 @@ sequelize.sync({alter:true})
       console.error('Unable to synchronized the database.',error);
    });
 
-
-   //Middleware
+//Middleware
 app.use(express.json());
 
 app.use(cors());
+
+//Routes
+app.use('/user',userRoutes);
+app.use('/login',loginRoutes);
+app.use('/job_post',jobPostRoutes);
+app.use('/job_application',jobApplicationRoutes);
 
 app.use((err,req,res,next)=>{
     console.error(err);
@@ -29,4 +40,3 @@ const port=7080;
 app.listen(port, () => {
    console.log(`Server Running on port ${port}`);
 });
-
