@@ -1,7 +1,7 @@
 .navbar {
     display: flex; /* Set the display property to flex for horizontal alignment */
     justify-content: space-between; /* Arrange the nav-items with space in between */
-    background-color: #343a40; /* Set the dark background color */
+    background-color: #009579; /* Set the dark background color */
     padding: 10px; /* Add padding for spacing */
     border-radius: 0;
   }
