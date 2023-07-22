@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div *ngIf="role == 'student'">
-                <button class="btn btn-success" [disabled]="applied" (click)="applyForJob()">{{ applied? 'Applied': 'Apply for Job' }}</button>
+                <button class="btn btn-success" [disabled]="applied" (click)="applyForJob()">{{ applied? applicationStatus: 'Apply for Job' }}</button>
             </div>
        </div>
     </div>
