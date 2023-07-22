@@ -18,6 +18,9 @@ import { JobPostingDetailComponent } from './job-posting-detail/job-posting-deta
 import { SignupComponent } from './signup/signup.component';
 import { SearchPipe } from './pipe/search.pipe';
 import { UploadComponent } from './upload/upload.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { UserListComponent } from './user-list/user-list.component';
 // import { SearchPipe } from './search.pipe';
 // import { SignupComponent } from './signup/signup.component';
 
@@ -36,7 +39,10 @@ import { UploadComponent } from './upload/upload.component';
     JobPostingDetailComponent,
     SignupComponent,
     SearchPipe,
-    UploadComponent
+    UploadComponent,
+    UserDetailComponent,
+    AdminDashboardComponent,
+    UserListComponent
     // SearchPipe,
     // SignupComponent
   ],

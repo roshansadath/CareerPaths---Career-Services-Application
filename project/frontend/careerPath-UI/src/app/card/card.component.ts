@@ -15,10 +15,13 @@ export class CardComponent {
   @Input() id: number | undefined;
 
   @Input() hide: boolean | undefined;
+
+  @Input() role: string | undefined;
   
   @Output() childRejectClicked = new EventEmitter<number>();
   @Output() childInviteClicked = new EventEmitter<number>();
   @Output() childDetailClicked = new EventEmitter<number>();
+  @Output() childRemoveClicked = new EventEmitter<number>();
 
   student: boolean = false;
 
@@ -45,6 +48,10 @@ export class CardComponent {
 
   viewDetail(){
     this.childDetailClicked.emit(this.id);
+  }
+
+  removeAccount(){
+    this.childRemoveClicked.emit(this.id);
   }
 
 }
