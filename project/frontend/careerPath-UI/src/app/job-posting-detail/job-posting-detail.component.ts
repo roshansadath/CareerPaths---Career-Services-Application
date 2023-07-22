@@ -61,8 +61,13 @@ export class JobPostingDetailComponent {
 
   candidateDetails(candidate: any){
     console.log(candidate)
-    this.studentService.setStudentDetails(candidate);
-    this.router.navigate(['/profile']);
+    // this.studentService.setStudentDetails(candidate);
+    // this.router.navigate(['/profile']);
+
+    // let foundObject = this.userList.find((obj: { userId: number; }) => obj.userId === id);
+
+    this.router.navigate(['/user/detail']);
+    this.userService.updateUserDetail(candidate);
   }
 
   applyForJob(){

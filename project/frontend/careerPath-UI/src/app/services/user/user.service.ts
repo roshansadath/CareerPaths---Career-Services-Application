@@ -16,8 +16,19 @@ export class UserService {
   private roleSubject = new Subject<string>();
   changes$ = this.roleSubject.asObservable();
 
+  userDetailSubject = new Subject<string>();
+  userDetailChanges$ = this.userDetailSubject.asObservable();
+
+  userData: any;
+
   notifyChanges(role: string) {
     this.roleSubject.next(role);
+  }
+
+  updateUserDetail(data: any){
+    console.log('HELLOO');
+    this.userData = data;
+    this.userDetailSubject.next(data);
   }
 
   setRole(role: string){

@@ -1,4 +1,4 @@
-<!-- <div class="container">
+<div *ngIf="userData != undefined" class="container">
     <div style="margin-left: 8%;">
         <h1>User Details:</h1>
     </div>
@@ -11,15 +11,16 @@
         </div>
         <div>
             <div class="user-detail-container">
-                <div class="title">{{ name }}</div>
-                <div class="role">{{ role }}</div>
+                <div class="title">{{ userData.name }}</div>
+                <div class="role">{{ userData.userType }}</div>
                 <div class="details">
-                    <div class="detail-item">Name: {{ name }}</div>
-                    <div class="detail-item">Username: {{ username }}</div>
-                    <div class="detail-item">Email: {{ email }}</div>
+                    <div class="detail-item">Name: {{ userData.name }}</div>
+                    <div class="detail-item">Username: {{ userData.username }}</div>
+                    <div class="detail-item">Email: {{ userData.email }}</div>
                     
                 </div>
             </div>
         </div>
     </div>
-</div> -->
+</div>
+<p *ngIf="!userData">Loading user data...</p>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../services/user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -11,7 +12,8 @@ export class UserListComponent {
     this.getAllUsers();
   }
 
-  constructor(private userService: UserService){}
+  constructor(private userService: UserService,
+    private router: Router){}
   userList: any;
   empty= '';
 
@@ -27,9 +29,11 @@ export class UserListComponent {
 
   handleDetailClick(id: any){
     
-    // let foundObject = this.candidateList.find((obj: { userId: number; }) => obj.userId === id);
-    // this.candidateDetails(foundObject);
-    // console.log('Child detail clicked with ID:', id);
+    let foundObject = this.userList.find((obj: { userId: number; }) => obj.userId === id);
+
+    this.router.navigate(['/user/detail']);
+    this.userService.updateUserDetail(foundObject);
+    
   }
 
   handleRemoveClick(id: any){
@@ -43,5 +47,7 @@ export class UserListComponent {
     }
     });
   }
+
+  
 
 }
