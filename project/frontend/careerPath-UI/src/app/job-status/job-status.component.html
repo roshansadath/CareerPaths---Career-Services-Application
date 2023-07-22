@@ -1,0 +1,31 @@
+<!-- modal.component.html
+<div class="modal-overlay"></div>
+<div class="modal-content">
+  <h2>You have update(s) on the following Job Postings!</h2>
+  <div>
+    <div>
+        <div>Job Title</div>
+    </div>
+  </div>
+</div> -->
+
+<div class="modal-container">
+    <div class="modal-overlay">
+        <div style="text-align: end;"><b style="cursor: pointer;" (click)="closeDialog()">X</b></div>
+        <h2>You have update(s) on the following Job Postings!</h2>
+        <div *ngFor="let item of data">
+            <div *ngIf="item != 'Pending'">
+                <div class="flex">
+                    <div>
+                        <div>Job Title</div>
+                        <div>{{ item.postId }}</div>
+                    </div>
+                    <div>
+                        <div>Job Status</div>
+                        <div>{{ item.status }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

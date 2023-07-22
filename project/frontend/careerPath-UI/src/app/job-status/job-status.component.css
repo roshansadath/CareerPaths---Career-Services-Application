@@ -1,0 +1,32 @@
+/* modal-overlay.css */
+.modal-overlay {
+    background-color: white;
+    width: 40%;
+    justify-content: center;
+    text-align: center;
+    left: 20px;
+    margin-left: 30%;
+    margin-top: 4%;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .modal-container{
+    position: absolute;
+    top: 0;
+    height: -webkit-fill-available;
+    left: 0;
+    justify-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  .flex{
+    display: flex;
+    
+  }
+  .flex > div{
+    flex: 1;
+  }

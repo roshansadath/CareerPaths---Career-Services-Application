@@ -21,6 +21,7 @@ import { UploadComponent } from './upload/upload.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { JobStatusComponent } from './job-status/job-status.component';
 // import { SearchPipe } from './search.pipe';
 // import { SignupComponent } from './signup/signup.component';
 
@@ -42,7 +43,8 @@ import { UserListComponent } from './user-list/user-list.component';
     UploadComponent,
     UserDetailComponent,
     AdminDashboardComponent,
-    UserListComponent
+    UserListComponent,
+    JobStatusComponent
     // SearchPipe,
     // SignupComponent
   ],
