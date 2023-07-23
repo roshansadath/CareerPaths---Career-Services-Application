@@ -1,0 +1,41 @@
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-container div{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex: 1;
+    text-align: center;
+    
+}
+
+.flex-container div:nth-child(1){
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.flex-container div label{
+    display: block;
+    color: rgb(78, 80, 255);
+    font-size: 12px;
+}
+.card-container{
+    box-shadow: 0px 1px 5px 4px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.card-container:hover{
+    cursor: pointer;
+    transition: 0.8s;
+    box-shadow: 0px 1px 5px 4px rgba(0,0,0,0.31);
+}
+button{
+    margin: 10px;
+}

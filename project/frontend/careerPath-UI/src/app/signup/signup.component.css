@@ -1,0 +1,178 @@
+body {
+
+  margin: 0; /* Remove default margin */
+  height: 100vh; /* Set height to full viewport height */
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center align vertically */
+  justify-content: center; /* Center align horizontally */
+  font: size 18px; /* Set font size */
+  background: linear-gradient(-45deg, #009579,#045042);
+  background-size: cover; /* Adjust background image size */
+}
+
+.container {
+  display: flex;
+  margin: 0 auto; /* Remove default margin */
+  align-items: center; /* Center align vertically */
+  justify-content: center; /* Center align horizontally */
+  font: size 18px; /* Set font size */
+  background: #009579; 
+  background-size: cover; /* Adjust background image size */
+  flex-direction: column;
+  width: 400px;
+  height: 500px;
+  max-width: 90%;
+  margin-top: 2rem;
+  padding: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+
+.panel {
+  flex: 1;
+}
+
+.panel-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel__image {
+  max-width: 100%;
+  height: auto;
+}
+
+.panel-right {
+  padding: 20px;
+}
+
+.shadows {
+  position: relative;
+  /*text-transform: uppercase;*/
+  text-shadow: -3px 3px 4px rgba(0, 0, 0, 0.1);
+  color: #009579;
+  letter-spacing: -0.02em;
+  font-family: 'Anton', Arial, sans-serif;
+  user-select: none;
+  font-size: 5vw; /* Adjust the font size as needed */
+  transition: all 0.25s ease-out;
+}
+
+.shadows:hover {
+   /* Update the shadow values */
+  text-shadow: -5px 5px 20px #07f5c9;
+}
+.heading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20vh;
+  background-color: white;
+}
+
+.head-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.form--hidden {
+  display: none; /* Hide the form when it has the form--hidden class */
+}
+
+.form > *:first-child {
+  margin-top: 0; /* Remove top margin from the first child of form */
+}
+
+.form > *:last-child {
+  margin-bottom: 0; /* Remove bottom margin from the last child of form */
+}
+
+.form__title {
+  margin-bottom: 2rem; /* Add margin below the form title */
+  text-align: center; /* Center align the form title */
+}
+
+.form__message {
+  text-align: center; /* Center align form messages */
+  margin-bottom: 1rem; /* Add margin below form messages */
+}
+
+.form__message--success {
+  color: #4bb544; /* Set text color for success message using success color variable */
+}
+
+.form__message--error {
+  color: #cc3333; /* Set text color for error message using error color variable */
+}
+
+.form__input-group {
+  margin-bottom: 1rem; /* Add margin below each input group in the form */
+}
+
+.form__input {
+  display: block; /* Display inputs as block elements */
+  width: 100%; /* Set input width to fill the available space */
+  padding: 0.75rem; /* Add padding inside inputs */
+  box-sizing: border-box; /* Include padding and border in input's total width */
+  border-radius: 4px; /* Apply border radius using variable */
+  border: 1px solid #dddd; /* Set border style */
+  outline: none; /* Remove outline on focus */
+  background: #eeee; /* Set input background color */
+  transition: background 0.3s, border-color 0.2s; /* Add transition effect for background and border color */
+}
+
+.form__input:focus {
+  border-color: #009579; /* Set border color on input focus using primary color variable */
+  background: #ffff; /* Set background color on input focus */
+}
+
+.form__input--error {
+  color: #cc3333; /* Set text color for error state using error color variable */
+  border-color: #cc3333; /* Set border color for error state using error color variable */
+}
+
+.form__input-error-message {
+  margin-top: 0.5rem; /* Add margin above the error message */
+  font-size: 0.85rem; /* Set font size for error message */
+  color: #cc3333; /* Set text color for error message using error color variable */
+}
+
+.submit__btn{
+  width: 100% !important; /* Set button width to fill the available space */
+  padding: 1rem 2rem !important; /* Add padding inside the button */
+  font-weight: bold !important; /* Set font weight for the button */
+  font-size: 1.1rem !important; /* Set font size for the button */
+  color: #fff !important; /* Set text color to white */
+  border: none !important; /* Remove button border */
+  cursor: pointer !important; /* Change cursor to pointer on hover */
+  background: #009579; /* Set button background color using primary color variable */
+}
+
+.submit__btn:hover {
+  background: #045042 !important; /* Set button background color on hover using darker shade of primary color */
+}
+
+.submit__btn:active {
+  transform: scale(0.98) !important; /* Add scaling effect on button click */
+}
+
+.form__text {
+  text-align: center; /* Center align form text */
+}
+
+.form__link {
+  color: #009579;
+  text-decoration: none; /* Remove default link underline */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.form__link:hover {
+  text-decoration: underline; /* Add underline on link hover */
+}
