@@ -37,6 +37,7 @@ export class JobPostingDetailComponent {
 
   role: string = '';
   applied: boolean = false;
+  applicationStatus: string | undefined;
 
   empty: string = '';
 
@@ -61,8 +62,13 @@ export class JobPostingDetailComponent {
 
   candidateDetails(candidate: any){
     console.log(candidate)
-    this.studentService.setStudentDetails(candidate);
-    this.router.navigate(['/profile']);
+    // this.studentService.setStudentDetails(candidate);
+    // this.router.navigate(['/profile']);
+
+    // let foundObject = this.userList.find((obj: { userId: number; }) => obj.userId === id);
+
+    this.router.navigate(['/user/detail']);
+    this.userService.updateUserDetail(candidate);
   }
 
   applyForJob(){
@@ -90,6 +96,20 @@ export class JobPostingDetailComponent {
         console.log(foundObject);
         if(foundObject != undefined){
           this.applied = true;
+          switch(foundObject.status){
+            case 'Pending':{
+              this.applicationStatus = 'Application Pending';
+              break;
+            }
+            case 'Invite':{
+              this.applicationStatus = 'Invited For Interview';
+              break;
+            }
+            case 'Reject':{
+              this.applicationStatus = 'Application Rejected';
+              break;
+            }
+          }
         }
         else{
           this.applied = false;

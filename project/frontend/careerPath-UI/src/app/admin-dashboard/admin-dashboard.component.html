@@ -1,4 +1,5 @@
 <div class="container">
+   <h2>ADMIN DASHBOARD</h2>
     <div style="display: flex; justify-content: space-between;">
         <div>
             <input type="text" [(ngModel)]="searchTerm" class="form-control" placeholder="Search Designation">
@@ -11,4 +12,3 @@
         <app-card [cardTitle]="job.job_designation" [cardDesc]="job.job_description" [cardLocation]="job.location" [cardDate]="job.posted_date"></app-card>
     </div>
 </div>
-<app-job-status *ngIf="isModalOpen" [data]="modalData" (childCloseClicked)="closeDialog()"></app-job-status>

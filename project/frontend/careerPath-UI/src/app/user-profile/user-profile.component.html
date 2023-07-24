@@ -29,7 +29,7 @@
                         <!-- <a href="#">Upload CV</a> -->
                         <!-- <span>Upload CV:</span>
                         <input type="file" class="file-upload" onchange="uploadFileUpdated(event.target.files)"> -->
-                        <app-upload *ngIf="role != 'employer'"></app-upload>
+                        <app-upload *ngIf="role != 'employer' && role !='admin'"></app-upload>
                     </div>
                 </div>
             </div>

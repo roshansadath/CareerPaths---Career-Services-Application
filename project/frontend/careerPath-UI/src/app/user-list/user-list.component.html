@@ -1,0 +1,12 @@
+<div class="container">
+    <h2>User List:</h2>
+<div *ngFor="let user of userList" >
+    <div *ngIf="user.userType != 'admin'">
+        <app-card (childRemoveClicked)="handleRemoveClick($event)"
+        (childDetailClicked)="handleDetailClick($event)"
+    [cardTitle]="user.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="user.userId"
+    [hide]="true" [role]="'admin'"></app-card>
+    </div>
+</div>
+
+</div>
