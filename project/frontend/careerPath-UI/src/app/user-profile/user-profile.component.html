@@ -25,6 +25,10 @@
                     <div class="detail-item">
                         <span class="bold-text">Password:</span> *********
                     </div>
+                    <div *ngIf="cvUrl != undefined" class="detail-item">
+                        <span class="bold-text"><a target="_blank" href="{{ backendUrl }}/upload/viewcv/{{cvUrl}}">View CV</a></span>
+                    </div>
+                    <div *ngIf="cvData != undefined">{{ cvData }}</div>
                     <div class="cv" *ngIf="(!tempInternalData) || role == 'student'">
                         <!-- <a href="#">Upload CV</a> -->
                         <!-- <span>Upload CV:</span>

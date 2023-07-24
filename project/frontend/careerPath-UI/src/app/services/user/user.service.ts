@@ -61,4 +61,8 @@ export class UserService {
   removeUser(id: number): Observable<any>{
     return this.http.delete(`${APIUrl}/user/${id}`);
   }
+
+  openCV(cvFileName: any): Observable<any>{
+    return this.http.get(`${APIUrl}/upload/viewcv/${cvFileName}`);
+  }
 }
