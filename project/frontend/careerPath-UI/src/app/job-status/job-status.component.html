@@ -25,11 +25,11 @@
             </thead>
             <tbody>
               <tr *ngFor="let item of data; let i = index">
-                <th scope="row" *ngIf="item != 'Pending'">{{ i + 1 }}</th>
-                <td *ngIf="item != 'Pending'">{{ item.JobPost.job_designation }}</td>
-                <td *ngIf="item != 'Pending'">{{ item.JobPost.location }}</td>
-                <td *ngIf="item != 'Pending'">{{ item.JobPost.posted_date }}</td>
-                <td *ngIf="item != 'Pending'">{{ item.status }}</td>
+                <th scope="row" *ngIf="item.status != 'Pending'">{{ i + 1 }}</th>
+                <td *ngIf="item.status != 'Pending'">{{ item.JobPost.job_designation }}</td>
+                <td *ngIf="item.status != 'Pending'">{{ item.JobPost.location }}</td>
+                <td *ngIf="item.status != 'Pending'">{{ item.JobPost.posted_date }}</td>
+                <td *ngIf="item.status != 'Pending'">{{ item.status }}</td>
               </tr>
             </tbody>
           </table>
