@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { StudentService } from '../services/student/student.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-upload',
@@ -12,7 +13,8 @@ export class UploadComponent {
   selectedFile: File | null = null;
 
   constructor(private http: HttpClient,
-    private studentService: StudentService) {}
+    private studentService: StudentService,
+    private router: Router) {}
 
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
@@ -33,6 +35,8 @@ export class UploadComponent {
       .subscribe({
         next: response=> {
           console.log('File uploaded!');
+          window.alert('Resume Uploaded!');
+          this.router.navigate(['/dashboard']);
         }, error: err => {
         console.log(err);
         // this.router.navigate(['/profile']);
