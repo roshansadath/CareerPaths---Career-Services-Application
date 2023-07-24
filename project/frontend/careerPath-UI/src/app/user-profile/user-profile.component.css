@@ -1,3 +1,69 @@
+.heading {
+    text-transform: uppercase; 
+    font-weight: 700; /* Increase the font weight for titles */
+    color: #009579;
+    margin-left: 100px;
+    display: flex;
+    position: relative;
+    
+    
+}
+.heading::after {
+    content: ''; /* Create a pseudo-element */
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust this value to control the distance of the shadow from the heading */
+    width: 100%;
+    height: 4px; /* Adjust this value to control the thickness of the underline */
+    background-color: #009579; /* Color of the underline */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add the shadow effect */
+  }
+
+.user-detail-container {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+    
+}
+
+.title {
+    font-size: 36px; /* Increase the font size for titles */
+    font-weight: 700; /* Increase the font weight for titles */
+    color: #009579; /* Custom title color */
+    /*text-transform: uppercase; /* Convert the text to uppercase */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle text shadow with increased opacity */
+    letter-spacing: 1px; /* Add some letter spacing for a cool effect */
+  }
+  
+  .role {
+    font-size: 50px; /* Increase the font size for role */
+    color: #4c4cff; /* Custom role color */
+    margin-top: 10px; /* Increase the top margin for some space */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Add a more prominent text shadow with increased opacity */
+    font-weight: 600; /* Slightly reduce font weight for a balanced look */
+  }
+  
+  .detail-item {
+    font-size: 16px; /* Increase the font size for detail items */
+    line-height: 28px; /* Slightly increase line-height for better readability */
+    margin-bottom: 10px;
+    color: #444; /* Customize detail item color */
+  }
+.button {
+    display: inline-block;
+  padding: 10px 20px;
+  background-color: #009579;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.bold-text {
+    font-weight: bold;
+    color: #058d74;
+}
+
 .flex-container{
     display: flex;
     flex-direction: row;

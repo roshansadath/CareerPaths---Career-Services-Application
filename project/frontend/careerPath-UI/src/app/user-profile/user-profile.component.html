@@ -1,9 +1,8 @@
 <div class="container">
     <div style="margin-left: 8%;">
-        <h1>User Details:</h1>
+        <h1 class="heading">User Details</h1>
     </div>
     <div class="flex-container">
-        
         <div>
             <div style="text-align: center;">
                 <img style="width: 70%; padding: 8px;" src="../../assets/userprofile.svg">
@@ -14,10 +13,18 @@
                 <div class="title">{{ name }}</div>
                 <div class="role">{{ role }}</div>
                 <div class="details">
-                    <div class="detail-item">Name: {{ name }}</div>
-                    <div class="detail-item">Username: {{ username }}</div>
-                    <div class="detail-item">Email: {{ email }}</div>
-                    <div class="detail-item">Password: *********</div>
+                    <div class="detail-item">
+                        <span class="bold-text">Name:</span> {{ name }}
+                    </div>
+                    <div class="detail-item">
+                        <span class="bold-text">Username:</span> {{ username }}
+                    </div>
+                    <div class="detail-item">
+                        <span class="bold-text">Email:</span> {{ email }}
+                    </div>
+                    <div class="detail-item">
+                        <span class="bold-text">Password:</span> *********
+                    </div>
                     <div class="cv" *ngIf="(!tempInternalData) || role == 'student'">
                         <!-- <a href="#">Upload CV</a> -->
                         <!-- <span>Upload CV:</span>
