@@ -30,3 +30,7 @@
   .flex > div{
     flex: 1;
   }
+
+  tr{
+    text-align: center;
+  }
