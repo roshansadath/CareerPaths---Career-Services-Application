@@ -37,8 +37,8 @@ export class SignupComponent {
         this.router.navigate(['/login']);
       }, error: err => {
       // console.log(err);
-      window.alert('Account Created!');
-      this.router.navigate(['/login']);
+      // window.alert('Account Created!');
+      // this.router.navigate(['/login']);
       // this.router.navigate(['/profile']);
     }
     });  

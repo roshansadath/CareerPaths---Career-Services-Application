@@ -27,7 +27,7 @@ export class UploadComponent {
     }
 
     const formData = new FormData();
-    formData.append('file', this.selectedFile);
+    formData.append('cvFile', this.selectedFile);
 
     this.studentService.uploadFile(formData)
       .subscribe({
