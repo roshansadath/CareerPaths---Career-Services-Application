@@ -4,6 +4,7 @@ const sequelize=require('./config/database');
 const userRoutes=require('./routes/userRoutes');
 const loginRoutes=require('./routes/loginRoute');
 const jobPostRoutes=require('./routes/jobPostRoutes');
+const uploadRoute=require('./routes/uploadRoute');
 const jobApplicationRoutes=require('./routes/jobApplicationRoutes');
 const cors=require('cors');
 const User=require('./model/user');
@@ -29,6 +30,7 @@ app.use('/user',userRoutes);
 app.use('/login',loginRoutes);
 app.use('/job_post',jobPostRoutes);
 app.use('/job_application',jobApplicationRoutes);
+app.use('/upload',uploadRoute);
 
 app.use((err,req,res,next)=>{
     console.error(err);
