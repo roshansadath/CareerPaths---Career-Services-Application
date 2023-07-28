@@ -1,3 +1,4 @@
 #Ignore everything in root directory
 /node_modules/
 .env
+uploads/*
