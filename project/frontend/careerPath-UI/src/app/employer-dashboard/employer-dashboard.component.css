@@ -3,3 +3,18 @@
     text-decoration: none;
     cursor: pointer;
 }
+.cross{
+    border: 1px solid #009579;
+    border-radius: 50px;
+    padding: 2px;
+    background: #009579;
+    color: white;
+    font-weight: 900;
+    margin-left: 14px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.cross:hover{
+    transition-duration: 0.3s;
+    padding: 5px;
+}

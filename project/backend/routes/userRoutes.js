@@ -6,7 +6,7 @@ const {authenticateToken} = require('../middleware/jwt');
 //To get profile of particular user.
 router.get('/',authenticateToken,userController.getProfile);
 
-router.get('/getalluser',userController.getAllUsers)
+router.get('/getalluser',userController.getAllUsers);
 router.get('/:id',userController.getUser);
 router.post('/',userController.createUser);
 router.put('/:id',userController.updateUser);

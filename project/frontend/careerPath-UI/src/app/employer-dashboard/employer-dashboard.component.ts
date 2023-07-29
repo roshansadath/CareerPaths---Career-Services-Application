@@ -43,4 +43,20 @@ export class EmployerDashboardComponent {
     this.employerService.setJobDetail(job);
     this.router.navigate(['/dashboard/posting']);
   }
+
+  deletePost(job: any){
+    console.log(job);
+    const result = window.confirm('Are you sure you want to delete this Post?');
+    if(result){
+      this.employerService.deleteJobPosting(job.postId).subscribe({
+            next: response=> {
+              // window.alert('Job Posting Deleted!');
+              this.getJobPostings();
+            }, error: err => {
+            console.log(err);
+          }
+          });
+    }
+    
+  }
 }

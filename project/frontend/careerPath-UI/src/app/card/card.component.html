@@ -1,10 +1,10 @@
 <div class="card-container">
     <div class="flex-container">
         <div>
-            <label>{{ !student? 'Job Designation:':'Candidate Name:' }}</label>
+            <label>{{ role != 'admin'? !student? 'Job Designation:' :'Candidate Name:': 'User Name' }}</label>
             
-            <span *ngIf="!student">{{cardTitle}}</span>
-            <span *ngIf="student" (click)="viewDetail()"><a>{{cardTitle}}</a></span>
+            <span *ngIf="!'student' || !'admin'">{{cardTitle}}</span>
+            <span *ngIf="'student' || 'admin'" (click)="viewDetail()"><a>{{cardTitle}}</a></span>
         </div>
         <div *ngIf="!student">
             <label>Description:</label>
@@ -21,6 +21,12 @@
         <div *ngIf="student" style="text-align: end;">
             <button class="btn btn-success" (click)="inviteForInterview()" *ngIf="!hide">Invite for interview</button>
             <button class="btn btn-danger" (click)="rejectCandidate()" *ngIf="!hide">Reject</button>
+        </div>
+        <div *ngIf="role == 'admin' && tab =='userList'">
+            <button class="btn btn-danger" (click)="removeAccount()">Remove Account</button>
+        </div>
+        <div *ngIf="role == 'admin' && tab =='dashboard'">
+            <button class="btn btn-danger" (click)="removeJobPosting()">Remove Posting</button>
         </div>
     </div>
 </div>

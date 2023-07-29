@@ -1,0 +1,19 @@
+.upload__btn{
+    padding: 1rem 2rem ; /* Add padding inside the button */
+    font-weight: bold; /* Set font weight for the button */
+    font-size: 1.1rem ; /* Set font size for the button */
+    color: #fff ; /* Set text color to white */
+    border: none ; /* Remove button border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    background: #009579; /* Set button background color using primary color variable */
+    border-radius: 5px; /* Add rounded edges to the button */
+    margin-top: 50px;
+  }
+  
+  .upload__btn:hover {
+    background: #045042; /* Set button background color on hover using darker shade of primary color */
+  }
+
+  .styled-file-input{
+    color: #009579;
+  }
