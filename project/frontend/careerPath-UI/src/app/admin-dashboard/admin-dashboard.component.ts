@@ -15,10 +15,12 @@ export class AdminDashboardComponent {
   searchTerm: string = '';
   constructor(private studentService: StudentService,
     private router: Router,
+    
     private employerService: EmployerService){
 
   }
-  jobPosting = [
+  jobPosting:any;
+  /*jobPosting = [
     {title: 'Developer', desc: 'Lorem ipsum dolor sit amet, consectetur adip...', location: 'Montreal', date: '20/07/2023'},
     {title: 'HR', desc: 'Lorem ipsum dolor sit amet, consectetur adip...', location: 'Toronto', date: '20/07/2023'},
     {title: 'Developer', desc: 'Lorem ipsum dolor sit amet, consectetur adip...', location: 'Toronto', date: '22/07/2023'},
@@ -27,7 +29,7 @@ export class AdminDashboardComponent {
     {title: 'HR', desc: 'Lorem ipsum dolor sit amet, consectetur adip...', location: 'Toronto', date: '20/07/2023'},
     {title: 'Developer', desc: 'Lorem ipsum dolor sit amet, consectetur adip...', location: 'Toronto', date: '22/07/2023'},
     {title: 'QA', desc: 'Lorem ipsum dolor sit amet, consectetur adip...', location: 'Montreal', date: '20/07/2023'}
-  ];
+  ];*/
 
   getJobPostings(){
     this.studentService.getAllJobPostingListData().subscribe({
@@ -39,10 +41,12 @@ export class AdminDashboardComponent {
     });
   }
 
-  openJobDetail(job: any){
-    console.log(job);
-    this.employerService.setJobDetail(job);
+  openJobDetail(id: any){
+    console.log(id);
+    let foundObject = this.jobPosting.find((obj: { postId: number; }) => obj.postId === id);
     this.router.navigate(['/dashboard/posting']);
+    this.employerService.setJobDetail(foundObject);
+    
   }
 
   handleRemoveClick(id: any){

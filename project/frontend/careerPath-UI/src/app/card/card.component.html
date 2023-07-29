@@ -3,8 +3,8 @@
         <div>
             <label>{{ role != 'admin'? !student? 'Job Designation:' :'Candidate Name:': 'User Name' }}</label>
             
-            <span *ngIf="!student">{{cardTitle}}</span>
-            <span *ngIf="student" (click)="viewDetail()"><a>{{cardTitle}}</a></span>
+            <span *ngIf="!'student' || !'admin'">{{cardTitle}}</span>
+            <span *ngIf="'student' || 'admin'" (click)="viewDetail()"><a>{{cardTitle}}</a></span>
         </div>
         <div *ngIf="!student">
             <label>Description:</label>
