@@ -8,7 +8,11 @@
             <!-- <input type="text" class="form-control" placeholder="Search Designation"> -->
         </div>
     </div>
-    <div *ngFor="let job of jobPosting | search: searchTerm" (click)="openJobDetail(job)">
-        <app-card [cardTitle]="job.job_designation" [cardDesc]="job.job_description" [cardLocation]="job.location" [cardDate]="job.posted_date"></app-card>
+    <div *ngFor="let job of jobPosting | search: searchTerm" >
+        <app-card (childRemoveClicked)="handleRemoveClick($event)"  
+        (childDetailClicked)="openJobDetail($event)" 
+        [cardTitle]="job.job_designation" [cardDesc]="job.job_description" 
+        [cardLocation]="job.location" [cardDate]="job.posted_date" 
+        [role]="'admin'" [hide]="true" [tab]="'dashboard'" [id]="job.postId"></app-card>
     </div>
 </div>

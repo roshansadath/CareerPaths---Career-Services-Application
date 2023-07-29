@@ -44,4 +44,16 @@ export class AdminDashboardComponent {
     this.employerService.setJobDetail(job);
     this.router.navigate(['/dashboard/posting']);
   }
+
+  handleRemoveClick(id: any){
+    this.employerService.deleteJobPosting(id).subscribe({
+      next: response=> {
+        window.alert('Job Posting Deleted!');
+        this.getJobPostings();
+      }, error: err => {
+      console.log(err);
+    }
+    });
+  }
+
 }
