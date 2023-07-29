@@ -22,8 +22,11 @@
             <button class="btn btn-success" (click)="inviteForInterview()" *ngIf="!hide">Invite for interview</button>
             <button class="btn btn-danger" (click)="rejectCandidate()" *ngIf="!hide">Reject</button>
         </div>
-        <div *ngIf="role == 'admin'">
+        <div *ngIf="role == 'admin' && tab =='userList'">
             <button class="btn btn-danger" (click)="removeAccount()">Remove Account</button>
+        </div>
+        <div *ngIf="role == 'admin' && tab =='dashboard'">
+            <button class="btn btn-danger" (click)="removeJobPosting()">Remove Posting</button>
         </div>
     </div>
 </div>

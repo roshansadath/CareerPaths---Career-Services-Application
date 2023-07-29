@@ -17,6 +17,8 @@ export class CardComponent {
   @Input() hide: boolean | undefined;
 
   @Input() role: string | undefined;
+
+  @Input() tab: string | undefined;
   
   @Output() childRejectClicked = new EventEmitter<number>();
   @Output() childInviteClicked = new EventEmitter<number>();
@@ -51,6 +53,10 @@ export class CardComponent {
   }
 
   removeAccount(){
+    this.childRemoveClicked.emit(this.id);
+  }
+
+  removeJobPosting(){
     this.childRemoveClicked.emit(this.id);
   }
 
