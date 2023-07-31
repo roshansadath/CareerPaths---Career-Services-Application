@@ -16,7 +16,7 @@
         </div>
         <div *ngIf="!student">
             <label>Posted On:</label>
-            {{cardDate}}
+            {{cardDate | timeAgo}}
         </div>
         <div *ngIf="student" style="text-align: end;">
             <button class="btn btn-success" (click)="inviteForInterview()" *ngIf="!hide">Invite for interview</button>

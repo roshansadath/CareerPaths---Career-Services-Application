@@ -27,15 +27,20 @@
                 </div>
     
                 
-            <div *ngIf="role == 'employer'">
+            <div *ngIf="role == 'employer' || role == 'admin'">
                 <div>
                     <label class="form__label">Candidate List:</label>
                 </div>
                 <div *ngFor="let candidate of candidateList" >
-                    <div *ngIf="candidate.status == 'Pending'">
+                    <div *ngIf="candidate.status == 'Pending' && role == 'employer'">
                         <app-card (childRejectClicked)="handleRejectClick($event)"
                     (childInviteClicked)="handleInviteClick($event)"
                     (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.userId"></app-card>
+                    </div>
+                    <div *ngIf="candidate.status == 'Pending' && role =='admin'">
+                        <app-card (childRejectClicked)="handleRejectClick($event)"
+                    (childInviteClicked)="handleInviteClick($event)"
+                    (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.userId" [hide]="true"></app-card>
                     </div>
                 </div>
 
@@ -67,3 +72,4 @@
        </div>
     </div>
 </div>
+<!-- <app-query-sidebar></app-query-sidebar> -->
