@@ -1,3 +1,26 @@
+.form__heading{
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px; /* Increase the margin-bottom to add more space between the form heading and the line */
+    color: #009579;
+    position: relative;
+}
+
+.form__heading {
+    text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px; /* Increase the margin-bottom to add more space between the form heading and the line */
+  color: #009579;
+  position: relative;
+  font-weight: bold; /* Make the text bold */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow to the text */
+  }
+.form__image{
+    width: 1000px; /* Set a specific width for the image */
+    height: 500px; /* Set a specific height for the image */
+    border-radius: 50px;
+}
+
 .posting-container{
     box-shadow: 0px 1px 5px 4px rgba(0,0,0,0.1);
     padding: 20px;
@@ -7,9 +30,14 @@
 .form-container{
     width: 100%;
     margin-top: 20px;
+    align-items: center;
 }
 
 .form-container > div{
     margin-bottom: 30px;
 }
 
+.form__label{
+    color: #009579;
+    font-weight: bold; /* Make the text bold */
+}

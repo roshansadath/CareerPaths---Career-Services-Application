@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { APIUrl } from 'src/app/constants/constant';
 
 @Injectable({
@@ -13,7 +13,26 @@ export class UserService {
   role: string = '';
   count: number = 0;
 
+  private roleSubject = new Subject<string>();
+  changes$ = this.roleSubject.asObservable();
+
+  userDetailSubject = new Subject<string>();
+  userDetailChanges$ = this.userDetailSubject.asObservable();
+
+  userData: any;
+
+  notifyChanges(role: string) {
+    this.roleSubject.next(role);
+  }
+
+  updateUserDetail(data: any){
+    console.log('HELLOO');
+    this.userData = data;
+    this.userDetailSubject.next(data);
+  }
+
   setRole(role: string){
+    this.notifyChanges(role);
     console.log(this.count);
     if(this.count == 0){
       console.log(role);
@@ -33,5 +52,17 @@ export class UserService {
     const token = localStorage.getItem('userToken');
     const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
     return this.http.get(`${APIUrl}/user`, {headers: headers});
+  }
+
+  getAllUsers(): Observable<any>{
+    return this.http.get(`${APIUrl}/user/getalluser`);
+  }
+
+  removeUser(id: number): Observable<any>{
+    return this.http.delete(`${APIUrl}/user/${id}`);
+  }
+
+  openCV(cvFileName: any): Observable<any>{
+    return this.http.get(`${APIUrl}/upload/viewcv/${cvFileName}`);
   }
 }

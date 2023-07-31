@@ -2,45 +2,50 @@
     
     <div class="posting-container">
         <div>
-            <h2 style="margin-bottom: 20px;"><b>Job Posting Detail:</b></h2>
+            <h2 class="form__heading"><b>Job Posting Detail</b></h2>
         </div>
        <div>
-            <img style="width: -webkit-fill-available; border-radius: 50px;" src="../../assets/img-20180108-5a53475c96097-720x405.jpg">
+            <img  class="form__image" src="../../assets/jobpostingdetail.svg">
        </div>
        <div class="form-container">
                 <div>
-                    <div><label>Job Title: </label></div>
+                    <div><label class="form__label">Job Title: </label></div>
                     <div>{{ jobTitle }}</div>
                 </div>
                 <div>
-                    <div><label>Job Description: </label></div>
+                    <div><label class="form__label">Job Description: </label></div>
                     <div>{{ jobDesc }}
                     </div>
                 </div>
                 <div>
-                    <div><label>Name of team: </label></div>
+                    <div><label class="form__label">Name of team: </label></div>
                     <div>{{ nameOfTeam }}</div>
                 </div>
                 <div>
-                    <div><label>Pay range: </label></div>
+                    <div><label class="form__label">Pay range: </label></div>
                     <div>${{ payRange }}</div>
                 </div>
     
                 
-            <div *ngIf="role == 'employer'">
+            <div *ngIf="role == 'employer' || role == 'admin'">
                 <div>
-                    <label>Candidate List:</label>
+                    <label class="form__label">Candidate List:</label>
                 </div>
                 <div *ngFor="let candidate of candidateList" >
-                    <div *ngIf="candidate.status == 'Pending'">
+                    <div *ngIf="candidate.status == 'Pending' && role == 'employer'">
                         <app-card (childRejectClicked)="handleRejectClick($event)"
                     (childInviteClicked)="handleInviteClick($event)"
                     (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.userId"></app-card>
                     </div>
+                    <div *ngIf="candidate.status == 'Pending' && role =='admin'">
+                        <app-card (childRejectClicked)="handleRejectClick($event)"
+                    (childInviteClicked)="handleInviteClick($event)"
+                    (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.userId" [hide]="true"></app-card>
+                    </div>
                 </div>
 
                 <div>
-                    <label>Invited Candidate List:</label>
+                    <label class="form__label">Invited Candidate List:</label>
                 </div>
                 <div *ngFor="let candidate of candidateList" >
                     <div *ngIf="candidate.status == 'Invite'">
@@ -51,7 +56,7 @@
                 </div>
 
                 <div>
-                    <label>Rejected Candidate List:</label>
+                    <label class="form__label">Rejected Candidate List:</label>
                 </div>
                 <div *ngFor="let candidate of candidateList" >
                     <div *ngIf="candidate.status == 'Reject'">
@@ -62,8 +67,9 @@
                 </div>
             </div>
             <div *ngIf="role == 'student'">
-                <button class="btn btn-success" [disabled]="applied" (click)="applyForJob()">{{ applied? 'Applied': 'Apply for Job' }}</button>
+                <button class="btn btn-success" [disabled]="applied" (click)="applyForJob()">{{ applied? applicationStatus: 'Apply for Job' }}</button>
             </div>
        </div>
     </div>
 </div>
+<!-- <app-query-sidebar></app-query-sidebar> -->

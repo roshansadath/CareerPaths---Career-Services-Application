@@ -10,7 +10,7 @@ router.get('/',authenticateToken,jobApplicationController.getUserJobApplications
 
 router.get('/getalljobapplication',jobApplicationController.getAllJobApplications);
 router.get('/:id',jobApplicationController.getJobApplication);
-router.post('/',jobApplicationController.createJobApplication);
+router.post('/',authenticateToken, jobApplicationController.createJobApplication);
 router.put('/:id',jobApplicationController.updateJobApplication);
 router.delete('/:id',jobApplicationController.deleteJobApplication);
 
