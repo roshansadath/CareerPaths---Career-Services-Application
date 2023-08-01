@@ -1,4 +1,4 @@
-const { createUser,getAllUsers }=require('../../controllers/userController');
+const { createUser,getAllUsers,getUser }=require('../../controllers/userController');
 const User=require('../../model/user');
 
 //Mock the User Create
@@ -13,7 +13,9 @@ const sampleUsers=[
 //Mock the findall function of user model. 
 User.findAll.mockResolvedValue(sampleUsers);
 
-const mockRequest=()=>({});
+const mockRequest=(params={})=>({
+    params,
+});
 const mockResponse=()=>{
     const res ={};
     res.json=jest.fn().mockReturnValue(res);
@@ -127,5 +129,68 @@ describe('getAllUsers',()=>{
         expect(mockNext).toHaveBeenCalledTimes(1);
         expect (mockNext).toHaveBeenCalledWith(testError);
     });
+});
+
+//Test to get single user
+describe('getUser',()=>{
+    beforeEach(()=>{
+        jest.clearAllMocks();
+    });
+
+    it('should return user when valid userId is provided.',async()=>{
+        const userId=1;
+        const req=mockRequest({id:userId});
+        const res=mockResponse();
+
+        const sampleUser={id:userId,name:'Manish Gautam',username:'manish198',email:'gautam@gmail.com'};
+        User.findByPk.mockResolvedValue(sampleUser);
+        
+        await getUser(req,res,mockNext);
+
+        expect(User.findByPk).toHaveBeenCalledTimes(1);
+        expect(User.findByPk).toHaveBeenCalledWith(userId);
+
+        expect(res.json).toHaveBeenCalledTimes(1);
+        expect(res.json).toHaveBeenCalledWith(sampleUser);
+        expect(res.status).not.toHaveBeenCalled();
+        expect(mockNext).not.toHaveBeenCalled();
+    });
+
+    it('should return not found error when invalid userId is provided', async()=>{
+        const userId=120;
+        const req=mockRequest({id:userId});
+        const res=mockResponse();
+
+        User.findByPk.mockResolvedValue(null);
+        await getUser(req,res,mockNext);
+
+        expect(User.findByPk).toHaveBeenCalledTimes(1);
+        expect(User.findByPk).toHaveBeenCalledWith(userId);
+        
+        expect(res.json).toHaveBeenCalledTimes(1);
+        expect(res.json).toHaveBeenCalledWith({error:'User not found'});
+        expect(res.status).toHaveBeenCalledTimes(1);
+        expect(res.status).toHaveBeenCalledWith(404);
+        expect(mockNext).not.toHaveBeenCalled();
+    });
+
+    it('should handle error and call the next',async()=>{
+        const userId=1;
+        const req=mockRequest({id: userId});
+        const res=mockResponse();
+
+        const testError=new Error('Test Error');
+        User.findByPk.mockRejectedValue(testError);
+
+        await getUser(req,res,mockNext);
+        
+        expect(User.findByPk).toHaveBeenCalledTimes(1);
+        expect(User.findByPk).toHaveBeenCalledWith(userId);
+        expect(res.json).not.toHaveBeenCalled();
+        expect(res.status).not.toHaveBeenCalled();
+        expect(mockNext).toHaveBeenCalledTimes(1);
+        expect(mockNext).toHaveBeenCalledWith(testError);
+    });
+
 });
 
