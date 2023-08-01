@@ -1,5 +1,5 @@
 const QueryPost=require('../model/queryPost');
-
+const User=require('../model/user');
 module.exports.createQueryPost=async(req,res,next)=>{
     try{
         const userId=req.user.userId;
@@ -31,6 +31,18 @@ module.exports.getQueryPost=async(req,res,next)=>{
             return res.status(404).json({error:'Query Post not found.'});
         }
         res.json(queryPost);
+    }catch(error){
+        next(error);
+    }
+}
+
+module.exports.getJobPostQueryPost=async(req,res,next)=>{
+    try{
+        const {id}=req.params;
+        const queryPosts= await QueryPost.findAll({where:{postId:id},
+            include:[User],
+        });
+        res.json(queryPosts);
     }catch(error){
         next(error);
     }
