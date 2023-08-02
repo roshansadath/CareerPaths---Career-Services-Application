@@ -65,3 +65,17 @@ module.exports.updateQueryPost=async(req,res,next)=>{
         next(error);
     }
 }
+
+module.exports.deleteQueryPost=async(req,res,next)=>{
+    const {id}=req.params;
+    try{
+        const queryPost=await QueryPost.findByPk(id);
+        if (queryPost){
+            queryPost.destroy();
+            return res.status(200).json({message:'Query Post deleted Successfully.'});
+        }
+        return res.error({error:'Query Post Not Found'});
+    }catch(error){
+        next(error);
+    }
+}

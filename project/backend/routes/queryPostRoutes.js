@@ -8,5 +8,6 @@ router.get('/:id',queryPostController.getQueryPost);
 //Job Post Specific query post
 router.get('/jobpost/:id',queryPostController.getJobPostQueryPost);
 router.put('/:id',queryPostController.updateQueryPost);
+router.delete('/:id',queryPostController.deleteQueryPost);
 
 module.exports=router;
