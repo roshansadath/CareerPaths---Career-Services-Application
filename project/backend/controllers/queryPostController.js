@@ -47,3 +47,21 @@ module.exports.getJobPostQueryPost=async(req,res,next)=>{
         next(error);
     }
 }
+
+module.exports.updateQueryPost=async(req,res,next)=>{
+    console.log('Here>>>>>>>>>>>>>>>>>>>>');
+    const { id }=req.params;
+    const { description, }=req.body;
+
+    try{
+        const queryPost=await QueryPost.findByPk(id);
+        if(queryPost){
+            queryPost.description=description;
+            queryPost.save();
+            return res.status(200).json({message:'Query Post updated successfully'});
+        }
+        return res.error({error:'Query Post Not Found'});
+    }catch(error){
+        next(error);
+    }
+}
