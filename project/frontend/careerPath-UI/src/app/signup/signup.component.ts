@@ -33,10 +33,13 @@ export class SignupComponent {
     this.loginService.sendSignupData(this.signupForm.value)
     .subscribe({
       next: response=> {
-
+        window.alert('Account Created!');
+        this.router.navigate(['/login']);
       }, error: err => {
-      console.log(err);
-      this.router.navigate(['/profile']);
+      // console.log(err);
+      // window.alert('Account Created!');
+      // this.router.navigate(['/login']);
+      // this.router.navigate(['/profile']);
     }
     });  
   }

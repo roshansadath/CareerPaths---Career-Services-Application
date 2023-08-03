@@ -7,7 +7,14 @@
             <a routerLink="/dashboard/posting/new" class="btn btn-primary posting-btn">New Job Posting</a>
         </div>
     </div>
-    <div *ngFor="let job of jobPosting | search: searchTerm" (click)="openJobDetail(job)">
-        <app-card [cardTitle]="job.job_designation" [cardDesc]="job.job_description" [cardLocation]="job.location" [cardDate]="job.posted_date"></app-card>
+    <div *ngFor="let job of jobPosting | search: searchTerm">
+        <div style="display: flex;">
+            <div style="flex: 1;" (click)="openJobDetail(job)">
+                <app-card [cardTitle]="job.job_designation" [cardDesc]="job.job_description" [cardLocation]="job.location" [cardDate]="job.posted_date"></app-card>
+            </div>
+            <div style="display: flex; align-items: center">
+                <div class="cross" (click)="deletePost(job)">X</div>
+            </div>
+        </div>
     </div>
 </div>

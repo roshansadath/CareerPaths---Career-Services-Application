@@ -29,10 +29,20 @@ export class StudentDashboardComponent {
     {title: 'QA', desc: 'Lorem ipsum dolor sit amet, consectetur adip...', location: 'Montreal', date: '20/07/2023'}
   ];
 
+  isModalOpen = false;
+
+  modalData: any;
+  showModal(data: any) {
+    this.isModalOpen = true;
+    this.modalData = data;
+  }
+
+
   getJobPostings(){
     this.studentService.getAllJobPostingListData().subscribe({
       next: response=> {
         this.jobPosting = response;
+        this.getAllJobStatus();
       }, error: err => {
       console.log(err);
     }
@@ -43,5 +53,30 @@ export class StudentDashboardComponent {
     console.log(job);
     this.employerService.setJobDetail(job);
     this.router.navigate(['/dashboard/posting']);
+  }
+
+  getAllJobStatus(){
+    this.studentService.getAllAppliedJobs().subscribe({
+      next: response=> {
+        console.log(response);
+        let data: any;
+        data = response;
+        for(let i = 0 ; i < data.length ; i++){
+          if(data[i].status == 'Reject' || data[i].status == 'Invite'){
+            // if(data.length > 0){
+              this.showModal(data);
+              break;
+            // }
+          }
+        }
+
+      }, error: err => {
+      console.log(err);
+    }
+    })
+  }
+
+  closeDialog(){
+    this.isModalOpen = false;
   }
 }

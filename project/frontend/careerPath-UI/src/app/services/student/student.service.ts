@@ -32,7 +32,9 @@ export class StudentService {
   }
 
   uploadFile(formData: any): Observable<any>{
-    return this.http.post(`${APIUrl}/file/upload`, formData);
+    const token = localStorage.getItem('userToken');
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.put(`${APIUrl}/upload/uploadcv`, formData, { headers: headers });
   }
 
   applyForJob(data: any){

@@ -42,4 +42,8 @@ export class EmployerService {
   inviteCandidate(applicationId: number, data: any): Observable<any>{
     return this.http.put(`${APIUrl}/job_application/${applicationId}`,data);
   }
+
+  deleteJobPosting(postId: number): Observable<any>{
+    return this.http.delete(`${APIUrl}/job_post/${postId}`);
+  }
 }

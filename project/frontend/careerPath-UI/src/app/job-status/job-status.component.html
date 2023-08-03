@@ -1,0 +1,59 @@
+<!-- modal.component.html
+<div class="modal-overlay"></div>
+<div class="modal-content">
+  <h2>You have update(s) on the following Job Postings!</h2>
+  <div>
+    <div>
+        <div>Job Title</div>
+    </div>
+  </div>
+</div> -->
+
+<div class="modal-container">
+    <div class="modal-overlay">
+        <div style="text-align: end;"><b style="cursor: pointer;" (click)="closeDialog()">X</b></div>
+        <h2>You have update(s) on the following Job Postings!</h2>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Job Title</th>
+                <th scope="col">Job Location</th>
+                <th scope="col">Job Posted On</th>
+                <th scope="col">Job Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of data; let i = index">
+                <th scope="row" *ngIf="item.status != 'Pending'">{{ i + 1 }}</th>
+                <td *ngIf="item.status != 'Pending'">{{ item.JobPost.job_designation }}</td>
+                <td *ngIf="item.status != 'Pending'">{{ item.JobPost.location }}</td>
+                <td *ngIf="item.status != 'Pending'">{{ item.JobPost.posted_date }}</td>
+                <td *ngIf="item.status != 'Pending'">{{ item.status }}</td>
+              </tr>
+            </tbody>
+          </table>
+        <!-- <div *ngFor="let item of data">
+            <div *ngIf="item != 'Pending'">
+                <div class="flex">
+                    <div>
+                        <div>Job Title</div>
+                        <div>{{ item.JobPost.job_designation }}</div>
+                    </div>
+                    <div>
+                        <div>Job Location</div>
+                        <div>{{ item.JobPost.location }}</div>
+                    </div>
+                    <div>
+                        <div>Job Posted On</div>
+                        <div>{{ item.JobPost.posted_date }}</div>
+                    </div>
+                    <div>
+                        <div>Job Status</div>
+                        <div>{{ item.status }}</div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
