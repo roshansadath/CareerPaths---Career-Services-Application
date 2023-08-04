@@ -65,4 +65,14 @@ export class UserService {
   openCV(cvFileName: any): Observable<any>{
     return this.http.get(`${APIUrl}/upload/viewcv/${cvFileName}`);
   }
+
+  getAllQueryData(postId: any): Observable<any>{
+    return this.http.get(`${APIUrl}/querypost/jobpost/${postId}`);
+  }
+
+  postQuery(data: any): Observable<any>{
+    const token = localStorage.getItem('userToken');
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token);
+    return this.http.post(`${APIUrl}/querypost`, data, {headers: headers});
+  }
 }

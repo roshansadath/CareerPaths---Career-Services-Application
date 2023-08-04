@@ -1,3 +1,35 @@
 <div class="sidebar-container">
-    sample
+    <img src="../../assets/828-8281959_frequently-asked-questions-icon.png" (click)="toggle()">
+    <div *ngIf="display" class="query-form-container">
+        <div *ngIf="role != 'admin'">
+            <div class="query-header">
+                Ask a Query!
+            </div>
+            <div class="query-body">
+                <form>
+                    <div>
+                        <textarea class="form-control" rows="10" placeholder="Write your query here..." [(ngModel)]="desc" [ngModelOptions]="{standalone: true}"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-success" (click)="postQuery()">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div *ngIf="role == 'admin'">
+            <div class="query-container">
+                <div class="header">
+                Queries
+                </div>
+                <div class="body">
+                    <div class="query-row" *ngFor="let query of queryData">
+                        <div class="flex-container" style="display:flex">
+                            <div class="name">{{ query.User.email }}</div>
+                            <div class="desc">{{ query.description }}</div>
+                        </div>
+                        <hr style="border-top: 3px dashed #009579;">
+                    </div>
+                </div>
+            </div>  
+    </div>
 </div>
