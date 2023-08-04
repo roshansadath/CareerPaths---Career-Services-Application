@@ -1,7 +1,9 @@
-<head>
-  <link rel="stylesheet" href="signup.component.css">
-  <title>CareerPaths-SignUp</title>
-</head>
+<div class="loader-container" style="height: -webkit-fill-available;" *ngIf="isLoading">
+  <mat-spinner style="position: absolute; top: 40%; left: 45%;"></mat-spinner>
+</div>
+
+<div class="content" *ngIf="!isLoading">
+  
 <div class="heading-container">
   <h2 class="shadows">CareerPaths</h2>
 </div>
@@ -63,4 +65,5 @@
 </div>
 <!-- Signup Form -->
 
+</div>
 </div>

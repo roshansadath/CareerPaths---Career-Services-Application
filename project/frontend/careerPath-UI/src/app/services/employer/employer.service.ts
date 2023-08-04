@@ -46,4 +46,8 @@ export class EmployerService {
   deleteJobPosting(postId: number): Observable<any>{
     return this.http.delete(`${APIUrl}/job_post/${postId}`);
   }
+
+  getJobPostCount(postId: number): Observable<any>{
+    return this.http.get(`${APIUrl}/job_application/jobpost/${postId}`);
+  }
 }

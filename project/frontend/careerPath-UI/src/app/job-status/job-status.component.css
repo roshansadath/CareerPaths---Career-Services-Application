@@ -31,6 +31,6 @@
     flex: 1;
   }
 
-  tr{
+  tr, th{
     text-align: center;
   }

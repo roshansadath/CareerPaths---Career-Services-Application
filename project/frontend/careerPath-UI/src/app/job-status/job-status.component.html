@@ -28,7 +28,7 @@
                 <th scope="row" *ngIf="item.status != 'Pending'">{{ i + 1 }}</th>
                 <td *ngIf="item.status != 'Pending'">{{ item.JobPost.job_designation }}</td>
                 <td *ngIf="item.status != 'Pending'">{{ item.JobPost.location }}</td>
-                <td *ngIf="item.status != 'Pending'">{{ item.JobPost.posted_date }}</td>
+                <td *ngIf="item.status != 'Pending'">{{ item.JobPost.posted_date | timeAgo }}</td>
                 <td *ngIf="item.status != 'Pending'">{{ item.status }}</td>
               </tr>
             </tbody>

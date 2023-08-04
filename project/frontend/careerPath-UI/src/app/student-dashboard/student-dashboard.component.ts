@@ -13,6 +13,7 @@ export class StudentDashboardComponent {
     this.getJobPostings();
   }
   searchTerm: string = '';
+  isLoading: boolean = false;
   constructor(private studentService: StudentService,
     private router: Router,
     private employerService: EmployerService){
@@ -33,18 +34,25 @@ export class StudentDashboardComponent {
 
   modalData: any;
   showModal(data: any) {
-    this.isModalOpen = true;
-    this.modalData = data;
+    if(localStorage.getItem('statusModal') == null){
+      this.isModalOpen = true;
+      localStorage.setItem('statusModal', 'viewed');
+      this.modalData = data;
+    }
+    
   }
 
 
   getJobPostings(){
+    this.isLoading = true;
     this.studentService.getAllJobPostingListData().subscribe({
       next: response=> {
+        this.isLoading = false;
         this.jobPosting = response;
         this.getAllJobStatus();
       }, error: err => {
       console.log(err);
+      this.isLoading = false;
     }
     });
   }
