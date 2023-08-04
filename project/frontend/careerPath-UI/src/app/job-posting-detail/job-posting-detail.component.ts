@@ -20,6 +20,7 @@ export class JobPostingDetailComponent {
     else{
       this.getStudentList();
     }
+    this.getJobPostCount();
   }
   constructor(private employerService: EmployerService,
     private studentService: StudentService,
@@ -31,7 +32,7 @@ export class JobPostingDetailComponent {
   jobDesc: string = 'lorem ipsum';
   nameOfTeam: string = 'QA Team';
   payRange: string = '21000';
-
+  applicantCount: number = 0;
   postId: number = -1;
   JobApplicationStudentData: any = [];
 
@@ -200,6 +201,16 @@ export class JobPostingDetailComponent {
         this.candidateList.push(student);
       }
 
+      }, error: err => {
+      console.log(err);
+    }
+    })
+  }
+
+  getJobPostCount(){
+    this.employerService.getJobPostCount(this.postId).subscribe({
+      next: response=> {
+        this.applicantCount = response.length;
       }, error: err => {
       console.log(err);
     }
