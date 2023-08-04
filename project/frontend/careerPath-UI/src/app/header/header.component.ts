@@ -37,6 +37,7 @@ export class HeaderComponent {
   logout(){
     this.userService.count = 0;
     this.showNavOptions = false;
+    localStorage.clear();
     this.router.navigate(['/login']);
     
   }

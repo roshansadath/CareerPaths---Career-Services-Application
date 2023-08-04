@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../services/user/user.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-user-list',
@@ -13,16 +14,21 @@ export class UserListComponent {
   }
 
   constructor(private userService: UserService,
-    private router: Router){}
+    private router: Router,
+    private snackBar: MatSnackBar){}
   userList: any;
   empty= '';
+  isLoading: boolean = false;
 
   getAllUsers(){
+    this.isLoading = true;
     this.userService.getAllUsers().subscribe({
       next: response=> {
+        this.isLoading = false;
         this.userList = response;
       }, error: err => {
       console.log(err);
+      this.isLoading = false;
     }
     });
   }
@@ -37,13 +43,18 @@ export class UserListComponent {
   }
 
   handleRemoveClick(id: any){
+    this.isLoading = true;
     this.userService.removeUser(id).subscribe({
       next: response=> {
+        this.isLoading = false;
         // this.userList = response;
-        window.alert('User Deleted!');
+        this.snackBar.open('User Deleted!', 'Dismiss', {
+          duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
+        });
         this.getAllUsers();
       }, error: err => {
       console.log(err);
+      this.isLoading = false;
     }
     });
   }

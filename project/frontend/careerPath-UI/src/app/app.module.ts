@@ -24,6 +24,9 @@ import { UserListComponent } from './user-list/user-list.component';
 import { JobStatusComponent } from './job-status/job-status.component';
 import { QuerySidebarComponent } from './query-sidebar/query-sidebar.component';
 import { TimeAgoPipe } from './pipe/time-ago.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 // import { SearchPipe } from './search.pipe';
 // import { SignupComponent } from './signup/signup.component';
 
@@ -57,7 +60,10 @@ import { TimeAgoPipe } from './pipe/time-ago.pipe';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,82 +1,88 @@
-<div class="container">
-    <div class="posting-container">
-        <div>
-            <h2 class="form__heading" style="text-align: left; font-weight: 400;"><b>Number of applicants: {{ applicantCount }}</b></h2>
-        </div>
-       
-       
-    </div>
+<div class="loader-container" style="height: -webkit-fill-available;" *ngIf="isLoading">
+    <mat-spinner style="position: absolute; top: 40%; left: 45%;"></mat-spinner>
+  </div>
 
-    <div class="posting-container">
-        <div>
-            <h2 class="form__heading"><b>Job Posting Detail</b></h2>
+<div class="content" *ngIf="!isLoading">
+    <div class="container">
+        <div class="posting-container">
+            <div>
+                <h2 class="form__heading" style="text-align: left; font-weight: 400;"><b>Number of applicants: {{ applicantCount }}</b></h2>
+            </div>
+           
+           
         </div>
-       <div>
-            <img  class="form__image" src="../../assets/jobpostingdetail.svg">
-       </div>
-       <div class="form-container">
-                <div>
-                    <div><label class="form__label">Job Title: </label></div>
-                    <div>{{ jobTitle }}</div>
-                </div>
-                <div>
-                    <div><label class="form__label">Job Description: </label></div>
-                    <div>{{ jobDesc }}
-                    </div>
-                </div>
-                <div>
-                    <div><label class="form__label">Name of team: </label></div>
-                    <div>{{ nameOfTeam }}</div>
-                </div>
-                <div>
-                    <div><label class="form__label">Pay range: </label></div>
-                    <div>${{ payRange }}</div>
-                </div>
     
-                
-            <div *ngIf="role == 'employer' || role == 'admin'">
-                <div>
-                    <label class="form__label">Candidate List:</label>
-                </div>
-                <div *ngFor="let candidate of candidateList" >
-                    <div *ngIf="candidate.status == 'Pending' && role == 'employer'">
-                        <app-card (childRejectClicked)="handleRejectClick($event)"
-                    (childInviteClicked)="handleInviteClick($event)"
-                    (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.userId"></app-card>
-                    </div>
-                    <div *ngIf="candidate.status == 'Pending' && role =='admin'">
-                        <app-card (childRejectClicked)="handleRejectClick($event)"
-                    (childInviteClicked)="handleInviteClick($event)"
-                    (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.userId" [hide]="true"></app-card>
-                    </div>
-                </div>
-
-                <div>
-                    <label class="form__label">Invited Candidate List:</label>
-                </div>
-                <div *ngFor="let candidate of candidateList" >
-                    <div *ngIf="candidate.status == 'Invite'">
-                        <app-card (childRejectClicked)="handleRejectClick($event)"
-                    (childInviteClicked)="handleInviteClick($event)"
-                    (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.userId" [hide]="true"></app-card>
-                    </div>
-                </div>
-
-                <div>
-                    <label class="form__label">Rejected Candidate List:</label>
-                </div>
-                <div *ngFor="let candidate of candidateList" >
-                    <div *ngIf="candidate.status == 'Reject'">
-                        <app-card (childRejectClicked)="handleRejectClick($event)"
-                    (childInviteClicked)="handleInviteClick($event)"
-                    (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.userId" [hide]="true"></app-card>
-                    </div>
-                </div>
+        <div class="posting-container">
+            <div>
+                <h2 class="form__heading"><b>Job Posting Detail</b></h2>
             </div>
-            <div *ngIf="role == 'student'">
-                <button class="btn btn-success" [disabled]="applied" (click)="applyForJob()">{{ applied? applicationStatus: 'Apply for Job' }}</button>
-            </div>
-       </div>
+           <div>
+                <img  class="form__image" src="../../assets/jobpostingdetail.svg">
+           </div>
+           <div class="form-container">
+                    <div>
+                        <div><label class="form__label">Job Title: </label></div>
+                        <div>{{ jobTitle }}</div>
+                    </div>
+                    <div>
+                        <div><label class="form__label">Job Description: </label></div>
+                        <div>{{ jobDesc }}
+                        </div>
+                    </div>
+                    <div>
+                        <div><label class="form__label">Name of team: </label></div>
+                        <div>{{ nameOfTeam }}</div>
+                    </div>
+                    <div>
+                        <div><label class="form__label">Pay range: </label></div>
+                        <div>${{ payRange }}</div>
+                    </div>
+        
+                    
+                <div *ngIf="role == 'employer' || role == 'admin'">
+                    <div>
+                        <label class="form__label">Candidate List:</label>
+                    </div>
+                    <div *ngFor="let candidate of candidateList" >
+                        <div *ngIf="candidate.status == 'Pending' && role == 'employer'">
+                            <app-card (childRejectClicked)="handleRejectClick($event)"
+                        (childInviteClicked)="handleInviteClick($event)"
+                        (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.userId"></app-card>
+                        </div>
+                        <div *ngIf="candidate.status == 'Pending' && role =='admin'">
+                            <app-card (childRejectClicked)="handleRejectClick($event)"
+                        (childInviteClicked)="handleInviteClick($event)"
+                        (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.userId" [hide]="true"></app-card>
+                        </div>
+                    </div>
+    
+                    <div>
+                        <label class="form__label">Invited Candidate List:</label>
+                    </div>
+                    <div *ngFor="let candidate of candidateList" >
+                        <div *ngIf="candidate.status == 'Invite'">
+                            <app-card (childRejectClicked)="handleRejectClick($event)"
+                        (childInviteClicked)="handleInviteClick($event)"
+                        (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.userId" [hide]="true"></app-card>
+                        </div>
+                    </div>
+    
+                    <div>
+                        <label class="form__label">Rejected Candidate List:</label>
+                    </div>
+                    <div *ngFor="let candidate of candidateList" >
+                        <div *ngIf="candidate.status == 'Reject'">
+                            <app-card (childRejectClicked)="handleRejectClick($event)"
+                        (childInviteClicked)="handleInviteClick($event)"
+                        (childDetailClicked)="handleDetailClick($event)" [cardTitle]="candidate.name" [cardDesc]="empty" [cardLocation]="empty" [cardDate]="empty" [id]="candidate.userId" [hide]="true"></app-card>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="role == 'student'">
+                    <button class="btn btn-success" [disabled]="applied" (click)="applyForJob()">{{ applied? applicationStatus: 'Apply for Job' }}</button>
+                </div>
+           </div>
+        </div>
     </div>
+    <app-query-sidebar *ngIf="role != 'employer'" [role]="role" [postId]="postId"></app-query-sidebar>
 </div>
-<app-query-sidebar *ngIf="role != 'employer'" [role]="role" [postId]="postId"></app-query-sidebar>

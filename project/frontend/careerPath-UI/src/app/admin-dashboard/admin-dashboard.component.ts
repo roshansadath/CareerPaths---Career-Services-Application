@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { StudentService } from '../services/student/student.service';
 import { Router } from '@angular/router';
 import { EmployerService } from '../services/employer/employer.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -13,9 +14,10 @@ export class AdminDashboardComponent {
     this.getJobPostings();
   }
   searchTerm: string = '';
+  isLoading: boolean = false;
   constructor(private studentService: StudentService,
     private router: Router,
-    
+    private snackBar: MatSnackBar,    
     private employerService: EmployerService){
 
   }
@@ -32,11 +34,14 @@ export class AdminDashboardComponent {
   ];*/
 
   getJobPostings(){
+    this.isLoading = true;
     this.studentService.getAllJobPostingListData().subscribe({
       next: response=> {
+        this.isLoading = false;
         this.jobPosting = response;
       }, error: err => {
       console.log(err);
+      this.isLoading = false;
     }
     });
   }
@@ -50,12 +55,20 @@ export class AdminDashboardComponent {
   }
 
   handleRemoveClick(id: any){
+    this.isLoading = true;
     this.employerService.deleteJobPosting(id).subscribe({
       next: response=> {
-        window.alert('Job Posting Deleted!');
+        this.isLoading = false;
+        this.snackBar.open('Job Posting Deleted!', 'Dismiss', {
+          duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
+        });
         this.getJobPostings();
       }, error: err => {
       console.log(err);
+      this.snackBar.open(err, 'Dismiss', {
+        duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
+      });
+      this.isLoading = false;
     }
     });
   }

@@ -9,6 +9,7 @@ import { APIUrl } from '../constants/constant';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent {
+isLoading: boolean = false;
 name: string = 'John Doe';
 username: string = 'Joe123';
 email: string = 'joe@gmail.com';
@@ -51,9 +52,11 @@ ngOnDestroy(){
 }
 
 getUserDetails(){
+  this.isLoading = true;
   this.userService.getUserData()
   .subscribe({
     next: response=> {
+      this.isLoading = false;
       this.name = response.name;
       this.email = response.email;
       this.username = response.username;
@@ -64,6 +67,7 @@ getUserDetails(){
       this.userService.setRole(this.role);
     }, error: err => {
     console.log(err);
+    this.isLoading = false;
   }
   });
 }

@@ -1,3 +1,9 @@
+<div class="loader-container" style="height: -webkit-fill-available;" *ngIf="isLoading">
+    <mat-spinner style="position: absolute; top: 40%; left: 45%;"></mat-spinner>
+  </div>
+
+  <div class="content" *ngIf="!isLoading">
+    
 <div class="container">
     <div style="display: flex; justify-content: space-between;">
         <div>
@@ -12,3 +18,4 @@
     </div>
 </div>
 <app-job-status *ngIf="isModalOpen" [data]="modalData" (childCloseClicked)="closeDialog()"></app-job-status>
+</div>

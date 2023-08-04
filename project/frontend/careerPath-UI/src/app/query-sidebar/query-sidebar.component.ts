@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { UserService } from '../services/user/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-query-sidebar',
@@ -7,7 +8,8 @@ import { UserService } from '../services/user/user.service';
   styleUrls: ['./query-sidebar.component.css']
 })
 export class QuerySidebarComponent {
-  constructor(private userService: UserService){}
+  constructor(private userService: UserService,
+    private snackBar: MatSnackBar){}
   ngOnInit(){
     if(this.role == 'admin'){
       this.getQueryData();
@@ -43,7 +45,9 @@ export class QuerySidebarComponent {
     this.userService.postQuery(data).subscribe({
       next: response=> {
         // this.queryData = response;
-        window.alert('Query Posted!');
+        this.snackBar.open('Query Posted!', 'Dismiss', {
+          duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
+        });
       }, error: err => {
       console.log(err);
     }

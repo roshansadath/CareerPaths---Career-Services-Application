@@ -1,4 +1,8 @@
-<div class="container">
+<div class="loader-container" style="height: -webkit-fill-available;" *ngIf="isLoading">
+    <mat-spinner style="position: absolute; top: 40%; left: 45%;"></mat-spinner>
+  </div>
+
+<div class="container" *ngIf="!isLoading">
     <div style="margin-left: 8%;">
         <h1 class="heading">User Details</h1>
     </div>
