@@ -24,7 +24,8 @@ const JobApplication=sequelize.define('JobApplication',{
     {
         timestamps: false, 
 });
-JobApplication.belongsTo(JobPost,{foreignKey:'postId'});
-JobApplication.belongsTo(User,{foreignKey:'userId'});
+JobApplication.belongsTo(User,{foreignKey:'userId',onDelete:'CASCADE'});
+JobApplication.belongsTo(JobPost,{foreignKey:'postId',onDelete:'CASCADE'});
+
 
 module.exports=JobApplication;
