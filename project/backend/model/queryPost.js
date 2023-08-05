@@ -14,7 +14,7 @@ const QueryPost=sequelize.define('QueryPost',{
         allowNull:false,
     },
 });
-QueryPost.belongsTo(JobPost,{foreignKey:'postId'});
-QueryPost.belongsTo(User,{foreignKey:'userId'});
+QueryPost.belongsTo(JobPost,{foreignKey:'postId',onDelete:'CASCADE'});
+QueryPost.belongsTo(User,{foreignKey:'userId',onDelete:'CASCADE'});
 
 module.exports=QueryPost;
