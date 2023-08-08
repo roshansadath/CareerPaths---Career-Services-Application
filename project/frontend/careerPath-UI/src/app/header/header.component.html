@@ -7,6 +7,9 @@
       <a *ngIf="showNavOptions" class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a>
     </div>
     <div class="nav-item">
+      <a *ngIf="showNavOptions && role == 'admin'" class="nav-link" routerLink="/userlist" routerLinkActive="active">User List</a>
+    </div>
+    <div class="nav-item">
       <a *ngIf="showNavOptions" class="nav-link" routerLinkActive="active" (click)="logout()">Logout</a>
     </div>
   </div>

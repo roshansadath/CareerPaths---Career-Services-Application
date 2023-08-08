@@ -1,4 +1,5 @@
 const JobApplication= require('../model/jobApplications');
+const JobPost= require('../model/jobPost');
 const User= require('../model/user');
 
 
@@ -6,7 +7,8 @@ module.exports.getUserJobApplications=async (req,res,next)=>{
     console.log('UserJobPost>>>>>>'+req.user.userId);
     userId=req.user.userId;
     try{
-        const jobApplications=await JobApplication.findAll({where:{userId:userId}});
+        const jobApplications=await JobApplication.findAll({where:{userId:userId},
+        include: [JobPost]});
         res.json(jobApplications);
     }catch (error){
         next(error);
@@ -50,11 +52,11 @@ module.exports.getJobApplication=async (req,res,next)=>{
 
 module.exports.createJobApplication=async(req,res,next)=>{
     try{
+        const userId=req.user.userId;
         const { 
             applied_date,
             status,
-            postId,
-            userId }=req.body;
+            postId }=req.body;
         
             // Create a new jobPost
         const newJobApplication = await JobApplication.create({

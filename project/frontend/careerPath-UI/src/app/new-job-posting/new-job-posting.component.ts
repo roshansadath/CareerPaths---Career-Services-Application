@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { EmployerService } from '../services/employer/employer.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-new-job-posting',
@@ -10,9 +11,11 @@ import { EmployerService } from '../services/employer/employer.service';
 export class NewJobPostingComponent {
 
   jobPostingForm: FormGroup;
+  isLoading: boolean = false;
 
   constructor(private formBuilder: FormBuilder,
-    private employeeService: EmployerService){
+    private employeeService: EmployerService,
+    private snackBar: MatSnackBar){
     this.jobPostingForm = this.formBuilder.group({
       jobTitle: '',
       jobDesc: '',
@@ -27,6 +30,7 @@ export class NewJobPostingComponent {
   }
 
   submitNewFormData(): void{
+    this.isLoading = true;
     console.log(this.jobPostingForm.value);
     let data = {
       job_designation: this.jobPostingForm.value.jobTitle,
@@ -38,11 +42,18 @@ export class NewJobPostingComponent {
     this.employeeService.postNewJobData(data)
     .subscribe({
       next: response=> {
+        this.isLoading = false;
         // if(response.statusCode == 200){
-          window.alert("Job Posting Successful!");
+          this.snackBar.open("Job Posting Successful!", 'Dismiss', {
+            duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
+          });
         // }
       }, error: err => {
-      console.log(err);
+      // console.log(err);
+      this.isLoading = false;
+      this.snackBar.open(err, 'Dismiss', {
+        duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
+      });
     }
     });
   }

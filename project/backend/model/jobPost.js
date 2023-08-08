@@ -43,6 +43,6 @@ const JobPost=sequelize.define('JobPost',{
     {
         timestamps: false, 
 });
-JobPost.belongsTo(User,{foreignKey:'posted_by_userId'});
+JobPost.belongsTo(User,{foreignKey:'posted_by_userId',onDelete:'CASCADE'});
 
 module.exports=JobPost;

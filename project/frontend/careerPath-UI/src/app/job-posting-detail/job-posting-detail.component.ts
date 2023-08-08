@@ -3,6 +3,7 @@ import { EmployerService } from '../services/employer/employer.service';
 import { StudentService } from '../services/student/student.service';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-job-posting-detail',
@@ -20,23 +21,26 @@ export class JobPostingDetailComponent {
     else{
       this.getStudentList();
     }
+    this.getJobPostCount();
   }
   constructor(private employerService: EmployerService,
     private studentService: StudentService,
     private router: Router,
-    private userService: UserService){
+    private userService: UserService,
+    private snackBar: MatSnackBar){
 
   }
   jobTitle: string = 'QA';
   jobDesc: string = 'lorem ipsum';
   nameOfTeam: string = 'QA Team';
   payRange: string = '21000';
-
+  applicantCount: number = 0;
   postId: number = -1;
   JobApplicationStudentData: any = [];
-
+  isLoading: boolean = false;
   role: string = '';
   applied: boolean = false;
+  applicationStatus: string | undefined;
 
   empty: string = '';
 
@@ -61,8 +65,13 @@ export class JobPostingDetailComponent {
 
   candidateDetails(candidate: any){
     console.log(candidate)
-    this.studentService.setStudentDetails(candidate);
-    this.router.navigate(['/profile']);
+    // this.studentService.setStudentDetails(candidate);
+    // this.router.navigate(['/profile']);
+
+    // let foundObject = this.userList.find((obj: { userId: number; }) => obj.userId === id);
+
+    this.router.navigate(['/user/detail']);
+    this.userService.updateUserDetail(candidate);
   }
 
   applyForJob(){
@@ -70,19 +79,29 @@ export class JobPostingDetailComponent {
       status: 'Pending',
       postId: this.postId
     }
+    this.isLoading = true;
     this.studentService.applyForJob(data).subscribe({
       next: response=> {
-        window.alert("Applied");
+        this.isLoading = false;
+        this.snackBar.open('Applied', 'Dismiss', {
+          duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
+        });
         this.router.navigate(['/dashboard']);
       }, error: err => {
       console.log(err);
+      this.isLoading = false;
+      this.snackBar.open(err, 'Dismiss', {
+        duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
+      });
     }
     });
   }
 
   getAllJobsApplied(){
+    this.isLoading = true;
     this.studentService.getAllAppliedJobs().subscribe({
       next: response=> {
+        this.isLoading = false;
         console.log(response);
         let data: any;
         data = response;
@@ -90,6 +109,20 @@ export class JobPostingDetailComponent {
         console.log(foundObject);
         if(foundObject != undefined){
           this.applied = true;
+          switch(foundObject.status){
+            case 'Pending':{
+              this.applicationStatus = 'Application Pending';
+              break;
+            }
+            case 'Invite':{
+              this.applicationStatus = 'Invited For Interview';
+              break;
+            }
+            case 'Reject':{
+              this.applicationStatus = 'Application Rejected';
+              break;
+            }
+          }
         }
         else{
           this.applied = false;
@@ -97,6 +130,7 @@ export class JobPostingDetailComponent {
 
       }, error: err => {
       console.log(err);
+      this.isLoading = false;
     }
     })
   }
@@ -119,12 +153,20 @@ export class JobPostingDetailComponent {
       postId: this.postId,
       userId: id
     }
+    this.isLoading = true;
     this.employerService.rejectCandidate(applicationId, body).subscribe({
       next: response=> {
-        window.alert('Candidate Rejected!');
+        this.isLoading = false;
+        this.snackBar.open('Candidate Rejected!', 'Dismiss', {
+          duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
+        });
         this.getStudentList()
       }, error: err => {
       console.log(err);
+      this.isLoading = false;
+      this.snackBar.open(err, 'Dismiss', {
+        duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
+      });
     }
     })
   }
@@ -145,12 +187,20 @@ export class JobPostingDetailComponent {
       postId: this.postId,
       userId: id
     }
+    this.isLoading = true;
     this.employerService.inviteCandidate(applicationId, body).subscribe({
       next: response=> {
-        window.alert('Candidate Invited for Interview!');
+        this.isLoading = false;
+        this.snackBar.open('Candidate Invited for Interview!', 'Dismiss', {
+          duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
+        });
         this.getStudentList()
       }, error: err => {
       console.log(err);
+      this.isLoading = false;
+      this.snackBar.open(err, 'Dismiss', {
+        duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
+      });
     }
     })
   }
@@ -164,9 +214,11 @@ export class JobPostingDetailComponent {
 
 
   getStudentList(){
+    this.isLoading = true;
     console.log("POPOPOPOP");
     this.studentService.getStudentListOnJobPostings(this.postId).subscribe({
       next: response=> {
+        this.isLoading = false;
         // console.log(response);
         // this.candidateList = response;
         this.JobApplicationStudentData = response; // Assuming the response is an array of student data
@@ -182,6 +234,20 @@ export class JobPostingDetailComponent {
 
       }, error: err => {
       console.log(err);
+      this.isLoading = false;
+    }
+    })
+  }
+
+  getJobPostCount(){
+    this.isLoading = true;
+    this.employerService.getJobPostCount(this.postId).subscribe({
+      next: response=> {
+        this.applicantCount = response.length;
+        this.isLoading = false;
+      }, error: err => {
+      console.log(err);
+      this.isLoading = false;
     }
     })
   }

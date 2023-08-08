@@ -1,0 +1,52 @@
+.sidebar-container{
+    /* background-color: red; */
+    /* width: 80px; */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    padding: 16px;
+    background-color: white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: 0px 1px 5px 4px rgba(0,0,0,0.1);
+    text-align: right;
+
+}
+img{
+    width: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.query-header, .header{
+    font-weight: 700;
+    font-size: 24px;
+
+}
+
+form > div{
+    margin-top: 20px;
+}
+
+.query-form-container{
+    transition: 1s;
+}
+
+.query-container{
+    /* width: 40%; */
+}
+.flex-container > div{
+    flex:1;
+    text-align: center;
+}
+.name{
+    font-size:12px;
+}
+.desc{
+    font-size:20px;
+}
+.query-row{
+    margin-top:10px;
+    margin-bottom: 10px;
+}

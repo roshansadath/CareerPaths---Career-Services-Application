@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../services/user/user.service';
 import { StudentService } from '../services/student/student.service';
+import { APIUrl } from '../constants/constant';
 
 @Component({
   selector: 'app-user-profile',
@@ -8,12 +9,18 @@ import { StudentService } from '../services/student/student.service';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent {
+isLoading: boolean = false;
 name: string = 'John Doe';
 username: string = 'Joe123';
 email: string = 'joe@gmail.com';
 role: string = 'student';
+cvUrl: string | undefined;
 
 tempInternalData: boolean = false;
+
+cvData: any;
+
+backendUrl = APIUrl;
 
 ngOnInit(){
   this.tempInternalData = this.studentService.getInternalDataValue();
@@ -25,6 +32,7 @@ ngOnInit(){
     this.username = candidateData.username;
     this.email = candidateData.email;
     this.role = candidateData.role;
+    
   }
   else{
     this.getUserDetails();
@@ -44,23 +52,38 @@ ngOnDestroy(){
 }
 
 getUserDetails(){
+  this.isLoading = true;
   this.userService.getUserData()
   .subscribe({
     next: response=> {
+      this.isLoading = false;
       this.name = response.name;
       this.email = response.email;
       this.username = response.username;
       this.role = response.userType;
+      this.cvUrl = response.cvUrl;
+    console.log(this.cvUrl);
 
       this.userService.setRole(this.role);
     }, error: err => {
     console.log(err);
+    this.isLoading = false;
   }
   });
 }
 
 uploadFileUpdated(file: any){
   console.log(file);
+}
+
+openCV(){
+  this.userService.openCV(this.cvUrl).subscribe({
+    next: response=> {
+      this.cvData = response;
+    }, error: err => {
+    console.log(err);
+  }
+  });
 }
 
 }

@@ -13,12 +13,20 @@ export class HeaderComponent {
   showNavOptions: boolean = false;
   setter = 0;
   private subscription: Subscription | undefined;
+  private HeaderSubscription: Subscription | undefined;
+
+  role: string | undefined;
   
   ngOnInit(){
     this.setter = 1;
 
     this.subscription = this.loginService.changes$.subscribe(() => {
       this.handleChanges();
+    });
+
+    this.HeaderSubscription = this.userService.changes$.subscribe((data) => {
+      console.log(data);
+      this.role = data;
     });
   }
   constructor(private router: Router,
@@ -29,6 +37,7 @@ export class HeaderComponent {
   logout(){
     this.userService.count = 0;
     this.showNavOptions = false;
+    localStorage.clear();
     this.router.navigate(['/login']);
     
   }
