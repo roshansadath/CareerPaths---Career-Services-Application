@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { EmployerService } from '../services/employer/employer.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-job-posting',
@@ -15,7 +16,8 @@ export class NewJobPostingComponent {
 
   constructor(private formBuilder: FormBuilder,
     private employeeService: EmployerService,
-    private snackBar: MatSnackBar){
+    private snackBar: MatSnackBar,
+    private router: Router){
     this.jobPostingForm = this.formBuilder.group({
       jobTitle: '',
       jobDesc: '',
@@ -47,6 +49,7 @@ export class NewJobPostingComponent {
           this.snackBar.open("Job Posting Successful!", 'Dismiss', {
             duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
           });
+          this.router.navigate(['/dashboard']);
         // }
       }, error: err => {
       // console.log(err);
