@@ -1,0 +1,484 @@
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\.eslintrc.js
+   1:1  error  Definition for rule 'import/order' was not found  import/order
+   1:1  error  'module' is not defined                           no-undef
+   2:1  error  Expected indentation of 2 spaces but found 4      indent
+   3:1  error  Expected indentation of 2 spaces but found 4      indent
+   4:1  error  Expected indentation of 2 spaces but found 4      indent
+   5:1  error  Expected indentation of 2 spaces but found 4      indent
+   6:1  error  Expected indentation of 4 spaces but found 6      indent
+   7:1  error  Expected indentation of 4 spaces but found 6      indent
+   8:1  error  Expected indentation of 4 spaces but found 6      indent
+   9:1  error  Expected indentation of 4 spaces but found 6      indent
+  10:1  error  Expected indentation of 6 spaces but found 8      indent
+  11:1  error  Expected indentation of 6 spaces but found 8      indent
+  12:1  error  Expected indentation of 4 spaces but found 6      indent
+  13:1  error  Expected indentation of 2 spaces but found 4      indent
+  14:1  error  Expected indentation of 0 spaces but found 2      indent
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\admin-dashboard\admin-dashboard.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\admin-dashboard\admin-dashboard.component.ts
+   1:1   error  Definition for rule 'import/order' was not found                            import/order
+  24:14  error  Unexpected any. Specify a different type                                    @typescript-eslint/no-explicit-any
+  43:1   error  Expected indentation of 8 spaces but found 6                                indent
+  44:1   error  Expected indentation of 8 spaces but found 6                                indent
+  45:1   error  Expected indentation of 6 spaces but found 4                                indent
+  49:21  error  Unexpected any. Specify a different type                                    @typescript-eslint/no-explicit-any
+  51:9   error  'foundObject' is never reassigned. Use 'const' instead                      prefer-const
+  57:25  error  Unexpected any. Specify a different type                                    @typescript-eslint/no-explicit-any
+  60:13  error  'response' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+  67:1   error  Expected indentation of 8 spaces but found 6                                indent
+  68:1   error  Expected indentation of 8 spaces but found 6                                indent
+  69:1   error  Expected indentation of 10 spaces but found 8                               indent
+  70:1   error  Expected indentation of 8 spaces but found 6                                indent
+  71:1   error  Expected indentation of 8 spaces but found 6                                indent
+  72:1   error  Expected indentation of 6 spaces but found 4                                indent
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\app-routing.module.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\app.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\app.component.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\app.module.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\card\card.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\card\card.component.ts
+   1:1  error  Definition for rule 'import/order' was not found  import/order
+  34:1  error  Expected indentation of 6 spaces but found 8      indent
+  35:1  error  Expected indentation of 4 spaces but found 6      indent
+  36:1  error  Expected indentation of 4 spaces but found 6      indent
+  37:1  error  Expected indentation of 6 spaces but found 8      indent
+  38:1  error  Expected indentation of 4 spaces but found 6      indent
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\constants\constant.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\dashboard\dashboard.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\dashboard\dashboard.component.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\employer-dashboard\employer-dashboard.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\employer-dashboard\employer-dashboard.component.ts
+   1:1   error  Definition for rule 'import/order' was not found                            import/order
+  41:1   error  Expected indentation of 8 spaces but found 6                                indent
+  42:1   error  Expected indentation of 8 spaces but found 6                                indent
+  43:1   error  Expected indentation of 6 spaces but found 4                                indent
+  47:22  error  Unexpected any. Specify a different type                                    @typescript-eslint/no-explicit-any
+  53:19  error  Unexpected any. Specify a different type                                    @typescript-eslint/no-explicit-any
+  59:1   error  Expected indentation of 8 spaces but found 12                               indent
+  59:19  error  'response' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+  60:1   error  Expected indentation of 10 spaces but found 14                              indent
+  61:1   error  Expected indentation of 10 spaces but found 14                              indent
+  62:1   error  Expected indentation of 12 spaces but found 16                              indent
+  63:1   error  Expected indentation of 10 spaces but found 14                              indent
+  64:1   error  Expected indentation of 10 spaces but found 14                              indent
+  65:1   error  Expected indentation of 8 spaces but found 12                               indent
+  66:1   error  Expected indentation of 10 spaces but found 12                              indent
+  67:1   error  Expected indentation of 10 spaces but found 12                              indent
+  68:1   error  Expected indentation of 10 spaces but found 12                              indent
+  69:1   error  Expected indentation of 12 spaces but found 14                              indent
+  70:1   error  Expected indentation of 10 spaces but found 12                              indent
+  71:1   error  Expected indentation of 8 spaces but found 10                               indent
+  72:1   error  Expected indentation of 6 spaces but found 10                               indent
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\footer\footer.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\footer\footer.component.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\header\header.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\header\header.component.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\job-posting-detail\job-posting-detail.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\job-posting-detail\job-posting-detail.component.ts
+    1:1   error  Definition for rule 'import/order' was not found                            import/order
+   39:30  error  Unexpected any. Specify a different type                                    @typescript-eslint/no-explicit-any
+   57:9   error  'data' is never reassigned. Use 'const' instead                             prefer-const
+   66:31  error  Unexpected any. Specify a different type                                    @typescript-eslint/no-explicit-any
+   78:9   error  'data' is never reassigned. Use 'const' instead                             prefer-const
+   84:13  error  'response' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+   91:1   error  Expected indentation of 8 spaces but found 6                                indent
+   92:1   error  Expected indentation of 8 spaces but found 6                                indent
+   93:1   error  Expected indentation of 8 spaces but found 6                                indent
+   94:1   error  Expected indentation of 10 spaces but found 8                               indent
+   95:1   error  Expected indentation of 8 spaces but found 6                                indent
+   96:1   error  Expected indentation of 6 spaces but found 4                                indent
+  106:19  error  Unexpected any. Specify a different type                                    @typescript-eslint/no-explicit-any
+  107:9   error  'data' is never reassigned. Use 'const' instead                             prefer-const
+  113:1   error  Expected indentation of 10 spaces but found 12                              indent
+  114:1   error  Expected indentation of 12 spaces but found 14                              indent
+  115:1   error  Expected indentation of 12 spaces but found 14                              indent
+  116:1   error  Expected indentation of 10 spaces but found 12                              indent
+  117:1   error  Expected indentation of 10 spaces but found 12                              indent
+  118:1   error  Expected indentation of 12 spaces but found 14                              indent
+  119:1   error  Expected indentation of 12 spaces but found 14                              indent
+  120:1   error  Expected indentation of 10 spaces but found 12                              indent
+  121:1   error  Expected indentation of 10 spaces but found 12                              indent
+  122:1   error  Expected indentation of 12 spaces but found 14                              indent
+  123:1   error  Expected indentation of 12 spaces but found 14                              indent
+  124:1   error  Expected indentation of 10 spaces but found 12                              indent
+  132:1   error  Expected indentation of 8 spaces but found 6                                indent
+  133:1   error  Expected indentation of 8 spaces but found 6                                indent
+  134:1   error  Expected indentation of 6 spaces but found 4                                indent
+  138:25  error  Unexpected any. Specify a different type                                    @typescript-eslint/no-explicit-any
+  151:9   error  'body' is never reassigned. Use 'const' instead                             prefer-const
+  158:13  error  'response' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+  165:1   error  Expected indentation of 8 spaces but found 6                                indent
+  166:1   error  Expected indentation of 8 spaces but found 6                                indent
+  167:1   error  Expected indentation of 8 spaces but found 6                                indent
+  168:1   error  Expected indentation of 10 spaces but found 8                               indent
+  169:1   error  Expected indentation of 8 spaces but found 6                                indent
+  170:1   error  Expected indentation of 6 spaces but found 4                                indent
+  174:25  error  Unexpected any. Specify a different type                                    @typescript-eslint/no-explicit-any
+  185:9   error  'body' is never reassigned. Use 'const' instead                             prefer-const
+  192:13  error  'response' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+  199:1   error  Expected indentation of 8 spaces but found 6                                indent
+  200:1   error  Expected indentation of 8 spaces but found 6                                indent
+  201:1   error  Expected indentation of 8 spaces but found 6                                indent
+  202:1   error  Expected indentation of 10 spaces but found 8                               indent
+  203:1   error  Expected indentation of 8 spaces but found 6                                indent
+  204:1   error  Expected indentation of 6 spaces but found 4                                indent
+  208:25  error  Unexpected any. Specify a different type                                    @typescript-eslint/no-explicit-any
+  210:9   error  'foundObject' is never reassigned. Use 'const' instead                      prefer-const
+  225:1   error  Expected indentation of 8 spaces but found 6                                indent
+  226:1   error  Expected indentation of 8 spaces but found 6                                indent
+  227:1   error  Expected indentation of 8 spaces but found 6                                indent
+  228:1   error  Expected indentation of 10 spaces but found 8                               indent
+  228:13  error  'student' is never reassigned. Use 'const' instead                          prefer-const
+  229:1   error  Expected indentation of 10 spaces but found 8                               indent
+  230:1   error  Expected indentation of 10 spaces but found 8                               indent
+  231:1   error  Expected indentation of 10 spaces but found 8                               indent
+  232:1   error  Expected indentation of 10 spaces but found 8                               indent
+  233:1   error  Expected indentation of 8 spaces but found 6                                indent
+  236:1   error  Expected indentation of 8 spaces but found 6                                indent
+  237:1   error  Expected indentation of 8 spaces but found 6                                indent
+  238:1   error  Expected indentation of 6 spaces but found 4                                indent
+  249:1   error  Expected indentation of 8 spaces but found 6                                indent
+  250:1   error  Expected indentation of 8 spaces but found 6                                indent
+  251:1   error  Expected indentation of 6 spaces but found 4                                indent
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\job-status\job-status.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\job-status\job-status.component.ts
+   1:1   error  Definition for rule 'import/order' was not found  import/order
+   9:18  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  14:27  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\login\login.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\login\login.component.ts
+   1:1  error  Definition for rule 'import/order' was not found  import/order
+  20:1  error  Expected indentation of 4 spaces but found 6      indent
+  21:1  error  Expected indentation of 6 spaces but found 8      indent
+  22:1  error  Expected indentation of 6 spaces but found 8      indent
+  23:1  error  Expected indentation of 4 spaces but found 6      indent
+  24:1  error  Expected indentation of 2 spaces but found 4      indent
+  36:1  error  Expected indentation of 6 spaces but found 4      indent
+  37:1  error  Expected indentation of 8 spaces but found 6      indent
+  38:1  error  Expected indentation of 10 spaces but found 8     indent
+  39:1  error  Expected indentation of 10 spaces but found 8     indent
+  40:1  error  Expected indentation of 10 spaces but found 8     indent
+  41:1  error  Expected indentation of 10 spaces but found 8     indent
+  42:1  error  Expected indentation of 8 spaces but found 6      indent
+  43:1  error  Expected indentation of 10 spaces but found 6     indent
+  44:1  error  Expected indentation of 10 spaces but found 6     indent
+  45:1  error  Expected indentation of 10 spaces but found 6     indent
+  46:1  error  Expected indentation of 12 spaces but found 8     indent
+  47:1  error  Expected indentation of 10 spaces but found 6     indent
+  48:1  error  Expected indentation of 8 spaces but found 4      indent
+  49:1  error  Expected indentation of 6 spaces but found 4      indent
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\new-job-posting\new-job-posting.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\new-job-posting\new-job-posting.component.ts
+   1:1   error  Definition for rule 'import/order' was not found                            import/order
+  35:9   error  'data' is never reassigned. Use 'const' instead                             prefer-const
+  43:1   error  Expected indentation of 6 spaces but found 4                                indent
+  44:1   error  Expected indentation of 8 spaces but found 6                                indent
+  44:13  error  'response' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+  45:1   error  Expected indentation of 10 spaces but found 8                               indent
+  46:1   error  Expected indentation of 10 spaces but found 8                               indent
+  51:1   error  Expected indentation of 8 spaces but found 6                                indent
+  52:1   error  Expected indentation of 10 spaces but found 6                               indent
+  53:1   error  Expected indentation of 10 spaces but found 6                               indent
+  54:1   error  Expected indentation of 10 spaces but found 6                               indent
+  55:1   error  Expected indentation of 12 spaces but found 8                               indent
+  56:1   error  Expected indentation of 10 spaces but found 6                               indent
+  57:1   error  Expected indentation of 8 spaces but found 4                                indent
+  58:1   error  Expected indentation of 6 spaces but found 4                                indent
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\pipe\search.pipe.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\pipe\search.pipe.ts
+  1:1   error  Definition for rule 'import/order' was not found  import/order
+  7:20  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  7:48  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\pipe\time-ago.pipe.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\pipe\time-ago.pipe.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\query-sidebar\query-sidebar.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\query-sidebar\query-sidebar.component.ts
+   1:1   error  Definition for rule 'import/order' was not found                            import/order
+  27:14  error  Unexpected any. Specify a different type                                    @typescript-eslint/no-explicit-any
+  35:1   error  Expected indentation of 8 spaces but found 6                                indent
+  36:1   error  Expected indentation of 6 spaces but found 4                                indent
+  41:9   error  'data' is never reassigned. Use 'const' instead                             prefer-const
+  46:13  error  'response' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+  52:1   error  Expected indentation of 8 spaces but found 6                                indent
+  53:1   error  Expected indentation of 6 spaces but found 4                                indent
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\search.pipe.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\services\employer\employer.service.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\services\employer\employer.service.ts
+   1:1   error  Definition for rule 'import/order' was not found  import/order
+  13:19  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  15:39  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  21:24  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  21:41  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  27:25  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  27:42  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  31:22  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  39:48  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  39:65  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  42:48  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  42:65  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  46:48  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  50:47  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\services\login\login.service.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\services\login\login.service.ts
+   1:1   error  Definition for rule 'import/order' was not found  import/order
+  23:23  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  23:40  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  29:24  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  29:41  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\services\student\student.service.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\services\student\student.service.ts
+   1:1   error  Definition for rule 'import/order' was not found  import/order
+  17:42  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  29:32  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  34:24  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  34:41  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  40:21  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  52:39  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  52:56  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\services\user\user.service.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\services\user\user.service.ts
+   1:1   error  Definition for rule 'import/order' was not found  import/order
+  22:13  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  28:26  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  51:29  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  57:29  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  61:38  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  65:22  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  65:39  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  69:27  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  69:44  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  73:19  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  73:36  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\signup\signup.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\signup\signup.component.ts
+   1:1   error  Definition for rule 'import/order' was not found                            import/order
+  20:1   error  Expected indentation of 4 spaces but found 6                                indent
+  21:1   error  Expected indentation of 6 spaces but found 8                                indent
+  22:1   error  Expected indentation of 6 spaces but found 8                                indent
+  23:1   error  Expected indentation of 6 spaces but found 8                                indent
+  24:1   error  Expected indentation of 6 spaces but found 8                                indent
+  25:1   error  Expected indentation of 6 spaces but found 8                                indent
+  26:1   error  Expected indentation of 4 spaces but found 6                                indent
+  27:1   error  Expected indentation of 2 spaces but found 4                                indent
+  38:1   error  Expected indentation of 6 spaces but found 4                                indent
+  39:1   error  Expected indentation of 8 spaces but found 6                                indent
+  39:13  error  'response' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+  40:1   error  Expected indentation of 10 spaces but found 8                               indent
+  41:1   error  Expected indentation of 10 spaces but found 8                               indent
+  42:1   error  Expected indentation of 12 spaces but found 10                              indent
+  43:1   error  Expected indentation of 10 spaces but found 8                               indent
+  44:1   error  Expected indentation of 10 spaces but found 8                               indent
+  45:1   error  Expected indentation of 8 spaces but found 6                                indent
+  46:1   error  Expected indentation of 10 spaces but found 6                               indent
+  47:1   error  Expected indentation of 10 spaces but found 6                               indent
+  48:1   error  Expected indentation of 10 spaces but found 6                               indent
+  49:1   error  Expected indentation of 12 spaces but found 8                               indent
+  50:1   error  Expected indentation of 10 spaces but found 6                               indent
+  51:1   error  Expected indentation of 8 spaces but found 4                                indent
+  52:1   error  Expected indentation of 6 spaces but found 4                                indent
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\student-dashboard\student-dashboard.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\student-dashboard\student-dashboard.component.ts
+   1:1   error  Definition for rule 'import/order' was not found  import/order
+  35:14  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  36:19  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  54:1   error  Expected indentation of 8 spaces but found 6      indent
+  55:1   error  Expected indentation of 8 spaces but found 6      indent
+  56:1   error  Expected indentation of 6 spaces but found 4      indent
+  60:22  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  70:19  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+  71:9   error  'data' is never reassigned. Use 'const' instead   prefer-const
+  75:1   error  Expected indentation of 12 spaces but found 14    indent
+  76:1   error  Expected indentation of 12 spaces but found 14    indent
+  82:1   error  Expected indentation of 8 spaces but found 6      indent
+  83:1   error  Expected indentation of 6 spaces but found 4      indent
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\upload\upload.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\upload\upload.component.ts
+   1:1   error  Definition for rule 'import/order' was not found                            import/order
+  21:25  error  Unexpected any. Specify a different type                                    @typescript-eslint/no-explicit-any
+  38:15  error  'response' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+  44:1   error  Expected indentation of 10 spaces but found 8                               indent
+  45:1   error  Expected indentation of 10 spaces but found 8                               indent
+  46:1   error  Expected indentation of 12 spaces but found 10                              indent
+  47:1   error  Expected indentation of 10 spaces but found 8                               indent
+  49:1   error  Expected indentation of 8 spaces but found 6                                indent
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\user-detail\user-detail.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\user-detail\user-detail.component.ts
+   1:1   error  Definition for rule 'import/order' was not found  import/order
+  28:13  error  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\user-list\user-list.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\user-list\user-list.component.ts
+   1:1   error  Definition for rule 'import/order' was not found                            import/order
+  19:13  error  Unexpected any. Specify a different type                                    @typescript-eslint/no-explicit-any
+  30:1   error  Expected indentation of 8 spaces but found 6                                indent
+  31:1   error  Expected indentation of 8 spaces but found 6                                indent
+  32:1   error  Expected indentation of 6 spaces but found 4                                indent
+  36:25  error  Unexpected any. Specify a different type                                    @typescript-eslint/no-explicit-any
+  38:9   error  'foundObject' is never reassigned. Use 'const' instead                      prefer-const
+  45:25  error  Unexpected any. Specify a different type                                    @typescript-eslint/no-explicit-any
+  48:13  error  'response' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+  56:1   error  Expected indentation of 8 spaces but found 6                                indent
+  57:1   error  Expected indentation of 8 spaces but found 6                                indent
+  58:1   error  Expected indentation of 6 spaces but found 4                                indent
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\user-profile\user-profile.component.spec.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\app\user-profile\user-profile.component.ts
+   1:1   error  Definition for rule 'import/order' was not found          import/order
+  12:1   error  Expected indentation of 2 spaces but found 0              indent
+  13:1   error  Expected indentation of 2 spaces but found 0              indent
+  14:1   error  Expected indentation of 2 spaces but found 0              indent
+  15:1   error  Expected indentation of 2 spaces but found 0              indent
+  16:1   error  Expected indentation of 2 spaces but found 0              indent
+  17:1   error  Expected indentation of 2 spaces but found 0              indent
+  19:1   error  Expected indentation of 2 spaces but found 0              indent
+  21:1   error  Expected indentation of 2 spaces but found 0              indent
+  21:9   error  Unexpected any. Specify a different type                  @typescript-eslint/no-explicit-any
+  23:1   error  Expected indentation of 2 spaces but found 0              indent
+  25:1   error  Expected indentation of 2 spaces but found 0              indent
+  26:1   error  Expected indentation of 4 spaces but found 2              indent
+  27:1   error  Expected indentation of 4 spaces but found 2              indent
+  28:1   error  Expected indentation of 4 spaces but found 2              indent
+  29:1   error  Expected indentation of 6 spaces but found 4              indent
+  29:24  error  Unexpected any. Specify a different type                  @typescript-eslint/no-explicit-any
+  30:1   error  Expected indentation of 6 spaces but found 4              indent
+  30:5   error  'candidateData' is never reassigned. Use 'const' instead  prefer-const
+  31:1   error  Expected indentation of 6 spaces but found 4              indent
+  32:1   error  Expected indentation of 6 spaces but found 4              indent
+  33:1   error  Expected indentation of 6 spaces but found 4              indent
+  34:1   error  Expected indentation of 6 spaces but found 4              indent
+  36:1   error  Expected indentation of 4 spaces but found 2              indent
+  37:1   error  Expected indentation of 4 spaces but found 2              indent
+  38:1   error  Expected indentation of 6 spaces but found 4              indent
+  39:1   error  Expected indentation of 4 spaces but found 2              indent
+  40:1   error  Expected indentation of 2 spaces but found 0              indent
+  42:1   error  Expected indentation of 2 spaces but found 0              indent
+  45:1   error  Expected indentation of 2 spaces but found 0              indent
+  47:1   error  Expected indentation of 2 spaces but found 0              indent
+  48:1   error  Expected indentation of 4 spaces but found 2              indent
+  49:1   error  Expected indentation of 4 spaces but found 2              indent
+  50:1   error  Expected indentation of 4 spaces but found 2              indent
+  51:1   error  Expected indentation of 4 spaces but found 2              indent
+  52:1   error  Expected indentation of 2 spaces but found 0              indent
+  54:1   error  Expected indentation of 2 spaces but found 0              indent
+  55:1   error  Expected indentation of 4 spaces but found 2              indent
+  56:1   error  Expected indentation of 4 spaces but found 2              indent
+  57:1   error  Expected indentation of 6 spaces but found 2              indent
+  58:1   error  Expected indentation of 8 spaces but found 4              indent
+  59:1   error  Expected indentation of 10 spaces but found 6             indent
+  60:1   error  Expected indentation of 10 spaces but found 6             indent
+  61:1   error  Expected indentation of 10 spaces but found 6             indent
+  62:1   error  Expected indentation of 10 spaces but found 6             indent
+  63:1   error  Expected indentation of 10 spaces but found 6             indent
+  64:1   error  Expected indentation of 10 spaces but found 6             indent
+  65:1   error  Expected indentation of 10 spaces but found 4             indent
+  67:1   error  Expected indentation of 10 spaces but found 6             indent
+  68:1   error  Expected indentation of 8 spaces but found 4              indent
+  69:1   error  Expected indentation of 10 spaces but found 4             indent
+  70:1   error  Expected indentation of 10 spaces but found 4             indent
+  71:1   error  Expected indentation of 8 spaces but found 2              indent
+  72:1   error  Expected indentation of 6 spaces but found 2              indent
+  73:1   error  Expected indentation of 2 spaces but found 0              indent
+  75:1   error  Expected indentation of 2 spaces but found 0              indent
+  75:25  error  Unexpected any. Specify a different type                  @typescript-eslint/no-explicit-any
+  76:1   error  Expected indentation of 4 spaces but found 2              indent
+  77:1   error  Expected indentation of 2 spaces but found 0              indent
+  79:1   error  Expected indentation of 2 spaces but found 0              indent
+  80:1   error  Expected indentation of 4 spaces but found 2              indent
+  81:1   error  Expected indentation of 6 spaces but found 4              indent
+  82:1   error  Expected indentation of 8 spaces but found 6              indent
+  83:1   error  Expected indentation of 6 spaces but found 4              indent
+  84:1   error  Expected indentation of 8 spaces but found 4              indent
+  85:1   error  Expected indentation of 6 spaces but found 2              indent
+  86:1   error  Expected indentation of 4 spaces but found 2              indent
+  87:1   error  Expected indentation of 2 spaces but found 0              indent
+
+C:\Users\laksh\Downloads\sep-project\CareerPaths-SOEN6011Summer2023\project\frontend\careerPath-UI\src\main.ts
+  1:1  error  Definition for rule 'import/order' was not found  import/order
+
+✖ 372 problems (372 errors, 0 warnings)
+  241 errors and 0 warnings potentially fixable with the `--fix` option.
+
