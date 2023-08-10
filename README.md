@@ -53,11 +53,11 @@ The aim of this project is to establish a career services platform that enables 
 - [x] Design database schema
 - [x] Create list of functionalities
 - [x] Decide (CRUD) APIs
-- [ ] Create webpages
-- [ ] Create APIs
-- [ ] Test APIs using POSTMAN
-- [ ] Integrate UI with backend APIs
-- [ ] Testing(Unit, Integration, UAT, etc.)
+- [x] Create webpages
+- [x] Create APIs
+- [x] Test APIs using POSTMAN
+- [x] Integrate UI with backend APIs
+- [x] Testing(Unit, Integration, UAT, etc.)
 - [ ] Deployment
 
 ### More information on the Progress of the Project is available on the [*CareerPaths GitHub Wiki*](https://github.com/roshansadath/CareerPaths-SOEN6011Summer2023/wiki)
