@@ -8,50 +8,67 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./query-sidebar.component.css']
 })
 export class QuerySidebarComponent {
-  constructor(private userService: UserService,
-    private snackBar: MatSnackBar){}
-  ngOnInit(){
-    if(this.role == 'admin'){
+  constructor(
+    private userService: UserService,
+    private snackBar: MatSnackBar
+  ) {}
+
+  ngOnInit() {
+    // Component initialization logic
+    // If the role is admin, get query data
+    if (this.role == 'admin') {
       this.getQueryData();
     }
   }
+
+  // Property to control the display of the sidebar
   display: boolean = false;
 
+  // Input properties received from parent component
   @Input() role: string | undefined;
   @Input() postId: number | undefined;
 
-  toggle(){
+  // Toggle the sidebar display
+  toggle() {
     this.display = !this.display;
   }
 
+  // Property to hold query data
   queryData: any;
+  // Property to hold query description
   desc: string = '';
 
-  getQueryData(){
+  // Get query data from the server
+  getQueryData() {
     this.userService.getAllQueryData(this.postId).subscribe({
-      next: response=> {
+      next: response => {
         this.queryData = response;
-      }, error: err => {
-      console.log(err);
-    }
+      },
+      error: err => {
+        console.log(err);
+      }
     });
   }
 
-  postQuery(){
+  // Post a new query
+  postQuery() {
+    // Prepare data for posting query
     let data = {
-      description : this.desc,
-      postId : this.postId
-    }
+      description: this.desc,
+      postId: this.postId
+    };
+
+    // Send query data to the service and subscribe to the response
     this.userService.postQuery(data).subscribe({
-      next: response=> {
-        // this.queryData = response;
+      next: response => {
+        // Display a snackbar with a success message
         this.snackBar.open('Query Posted!', 'Dismiss', {
-          duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
+          duration: 2000,
         });
-      }, error: err => {
-      console.log(err);
-    }
+      },
+      error: err => {
+        console.log(err);
+      }
     });
-    // console.log(this.desc);
   }
 }

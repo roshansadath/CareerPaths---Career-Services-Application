@@ -13,6 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class JobPostingDetailComponent {
 
   ngOnInit(){
+    // Component initialization logic
     this.role = this.userService.getRole();
     this.setJobPostingDetailData();
     if(this.role == 'student'){
@@ -53,6 +54,7 @@ export class JobPostingDetailComponent {
 
   ];
 
+  // Set job posting details from employer service
   setJobPostingDetailData(){
     let data = this.employerService.getJobDetail();
     this.jobTitle = data.job_designation;
@@ -63,6 +65,7 @@ export class JobPostingDetailComponent {
   }
 
 
+  // Navigate to candidate details page
   candidateDetails(candidate: any){
     console.log(candidate)
     // this.studentService.setStudentDetails(candidate);
@@ -74,6 +77,7 @@ export class JobPostingDetailComponent {
     this.userService.updateUserDetail(candidate);
   }
 
+  // Apply for a job posting
   applyForJob(){
     let data = {
       status: 'Pending',
@@ -97,6 +101,7 @@ export class JobPostingDetailComponent {
     });
   }
 
+  // Get all jobs applied by the student
   getAllJobsApplied(){
     this.isLoading = true;
     this.studentService.getAllAppliedJobs().subscribe({
@@ -135,6 +140,7 @@ export class JobPostingDetailComponent {
     })
   }
 
+   // Handle reject click event
   handleRejectClick(id: any) {
     // console.log('Child clicked with ID:', id);
     let applicationId = -1;
@@ -171,6 +177,7 @@ export class JobPostingDetailComponent {
     })
   }
 
+  // Handle invite click event
   handleInviteClick(id: any){
     console.log('Child invite clicked with ID:', id);
     let applicationId = -1;
@@ -205,6 +212,7 @@ export class JobPostingDetailComponent {
     })
   }
 
+   // Handle candidate detail click event
   handleDetailClick(id: any){
     
     let foundObject = this.candidateList.find((obj: { userId: number; }) => obj.userId === id);
@@ -213,6 +221,7 @@ export class JobPostingDetailComponent {
   }
 
 
+  // Get student list for the job posting
   getStudentList(){
     this.isLoading = true;
     console.log("POPOPOPOP");
@@ -239,6 +248,7 @@ export class JobPostingDetailComponent {
     })
   }
 
+  // Get the count of job applicants
   getJobPostCount(){
     this.isLoading = true;
     this.employerService.getJobPostCount(this.postId).subscribe({

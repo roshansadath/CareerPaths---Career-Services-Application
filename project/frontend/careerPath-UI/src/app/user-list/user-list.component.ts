@@ -9,56 +9,80 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent {
-  ngOnInit(){
+  // Initialize user list on component initialization
+  ngOnInit() {
     this.getAllUsers();
   }
 
-  constructor(private userService: UserService,
+  constructor(
+    private userService: UserService,
     private router: Router,
-    private snackBar: MatSnackBar){}
+    private snackBar: MatSnackBar
+  ) {}
+
+  // Property to hold the list of users
   userList: any;
-  empty= '';
+  
+  // Property to display when userList is empty
+  empty = '';
+
+  // Property to track loading state
   isLoading: boolean = false;
 
-  getAllUsers(){
+  // Fetch all users from the server
+  getAllUsers() {
     this.isLoading = true;
+
+    // Get user data from the service and subscribe to the response
     this.userService.getAllUsers().subscribe({
-      next: response=> {
+      next: response => {
+        // On successful response
         this.isLoading = false;
         this.userList = response;
-      }, error: err => {
-      console.log(err);
-      this.isLoading = false;
-    }
+      },
+      error: err => {
+        // On error
+        console.log(err);
+        this.isLoading = false;
+      }
     });
   }
 
-  handleDetailClick(id: any){
-    
-    let foundObject = this.userList.find((obj: { userId: number; }) => obj.userId === id);
+  // Handle click on user details
+  handleDetailClick(id: any) {
+    // Find the clicked user from the userList
+    let foundObject = this.userList.find(
+      (obj: { userId: number }) => obj.userId === id
+    );
 
+    // Navigate to user detail page and update the user detail in service
     this.router.navigate(['/user/detail']);
     this.userService.updateUserDetail(foundObject);
-    
   }
 
-  handleRemoveClick(id: any){
+  // Handle click to remove user
+  handleRemoveClick(id: any) {
     this.isLoading = true;
+
+    // Send request to remove user and subscribe to the response
     this.userService.removeUser(id).subscribe({
-      next: response=> {
+      next: response => {
+        // On successful removal
         this.isLoading = false;
-        // this.userList = response;
+
+        // Display a snackbar with a success message
         this.snackBar.open('User Deleted!', 'Dismiss', {
-          duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
+          duration: 2000,
         });
+
+        // Fetch updated user list
         this.getAllUsers();
-      }, error: err => {
-      console.log(err);
-      this.isLoading = false;
-    }
+      },
+      error: err => {
+        // On error
+        console.log(err);
+        this.isLoading = false;
+      }
     });
   }
-
-  
-
 }

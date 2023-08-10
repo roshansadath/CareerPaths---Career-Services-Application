@@ -10,45 +10,63 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+  // Property to track loading state
   isLoading: boolean = false;
+
+  // Form group for the signup form
   signupForm: FormGroup;
 
-  constructor(private loginService: LoginService,
+  constructor(
+    private loginService: LoginService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private snackBar: MatSnackBar){
-      this.signupForm = this.formBuilder.group({
-        username: '',
-        name: '',
-        email: '',
-        password: '',
-        userType: ''
-      });
-    }
-
-
-  ngOnInit(): void{
-
+    private snackBar: MatSnackBar
+  ) {
+    // Create the signup form using FormBuilder
+    this.signupForm = this.formBuilder.group({
+      username: '',
+      name: '',
+      email: '',
+      password: '',
+      userType: ''
+    });
   }
 
-  submitSignupData(){
+  ngOnInit(): void {
+    // Component initialization logic
+  }
+
+  // Submit signup data to the server
+  submitSignupData() {
+    // Output the form values to the console (for testing)
     console.log(this.signupForm.value);
+
+    // Set loading state to true
     this.isLoading = true;
-    this.loginService.sendSignupData(this.signupForm.value)
-    .subscribe({
-      next: response=> {
+
+    // Send signup data to the service and subscribe to the response
+    this.loginService.sendSignupData(this.signupForm.value).subscribe({
+      next: response => {
+        // On successful signup response
         this.isLoading = false;
+
+        // Display a snackbar with a success message
         this.snackBar.open('Account Created!', 'Dismiss', {
-          duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
+          duration: 2000,
         });
+
+        // Navigate to the login page
         this.router.navigate(['/login']);
-      }, error: err => {
-      // console.log(err);
-      this.isLoading = false;
-      this.snackBar.open(err, 'Dismiss', {
-        duration: 2000, // Set the duration (in milliseconds) for how long the snackbar will be displayed
-      });
-    }
-    });  
+      },
+      error: err => {
+        // On signup error
+        this.isLoading = false;
+
+        // Display a snackbar with an error message
+        this.snackBar.open(err, 'Dismiss', {
+          duration: 2000,
+        });
+      }
+    });
   }
 }

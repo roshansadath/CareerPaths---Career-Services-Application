@@ -6,17 +6,26 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./job-status.component.css']
 })
 export class JobStatusComponent {
+  // Input property to receive data from parent component
   @Input() data: any | undefined;
+
+  // Output property to emit an event to parent component
   @Output() childCloseClicked = new EventEmitter<number>();
-  ngOnInit(){
+
+  ngOnInit() {
+    // Component initialization logic
     this.generateModalData(this.data);
   }
-  generateModalData(data: any){
+
+  // Generate modal data based on the received input data
+  generateModalData(data: any) {
     console.log(data);
+    // Perform operations based on the received data
   }
 
-  closeDialog(){
+  // Function to emit event when close button is clicked
+  closeDialog() {
     this.childCloseClicked.emit();
+    // Emit the event to notify the parent component
   }
-
 }
